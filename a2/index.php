@@ -18,7 +18,7 @@
     </header>
 
     <nav>
-      Put website navigation links here
+    http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php
     </nav>
 
     <main>
