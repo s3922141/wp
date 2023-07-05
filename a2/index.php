@@ -18,7 +18,7 @@
     </header>
 
     <nav>
-    http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php
+    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php">Bookings</a> |
     </nav>
 
     <main>
