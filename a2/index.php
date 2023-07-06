@@ -14,7 +14,7 @@
   <body>
 
     <header>
-      Lunardo
+      <h1> Lunardo </h1>
     </header>
 
     <nav>
@@ -26,7 +26,7 @@
 
     <main>
       <section id='About Us'>
-          <h2> About Us</h2>
+          <h2> About Us </h2>
           <p> The cinema has reopened after extensive improvements and renovations. </p>
           <p> There are new seats: standard seats and reclinable first class seats</p>
           <p> The projection and sound systems are upgraded with 3D Dolby Vision projection and Dolby Atmos sound.</p>
