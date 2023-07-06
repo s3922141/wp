@@ -1,1 +1,24 @@
-/* Insert your styles here */
+header {
+  height: 100px;
+  background-color: rgba(65, 8, 8, 0.747);
+  }
+
+nav {
+  height: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+body, html {
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+  }
+  
+  section {
+    padding-top: 20px;
+    min-height: calc(100vh - 20px);
+    background-color: rgba(12, 12, 12, 0.918);
+  }
+  
