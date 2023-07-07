@@ -21,7 +21,6 @@ body, html {
     background-color: rgba(12, 12, 12, 0.918);
     text-align: center;
     font-family: "Helvetica", sans-serif;
-    color: white;
   }
 
   footer {
@@ -32,6 +31,7 @@ body, html {
   section {
     padding-top: 20px;
     min-height: calc(100vh - 20px);
+    color: white;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -43,4 +43,70 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  #First-Class-Seats {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  @media (max-width: 700px) {
+    #First-Class-Seats {
+      flex-direction: column;
+    }
+  }
+
+  #Profern-Verona-Twin {
+    max-width: 650px;
+    max-width: 80vw;
+    max-height: 80vh;
+    max-height: 650px;
+    object-fit: contain;
+  }
+
+  #First-Class-Prices {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+  }
+
+  #Standard-Seats {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  @media (max-width: 700px) {
+    #Standard-Seats {
+      flex-direction: column;
+    }
+  }
+
+  #Profern-Standard-Twin {
+    max-width: 650px;
+    max-width: 80vw;
+    max-height: 80vh;
+    max-height: 650px;
+    object-fit: contain;
+  }
+
+  #First-Standard-Prices {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+  }
+
+  #Discounted-Seats {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
   }

@@ -35,13 +35,71 @@
       <section id='Seats-and-Prices'>
           <h2> Seats and Prices</h2>
           <article id="First-Class-Seats">
-            <img src="../../media/Profern-Verona-Twin.png" alt="Profern Verona Twin">
+            <img src="../../media/Profern-Verona-Twin.png" alt="Profern Verona Twin" id = "Profern-Verona-Twin">
+            <div id = "First-Class-Prices">
+              <h3> First Class Seats</h3>
+              <p> Adult $25 </p>
+              <p> Concession $23.50</p>
+              <p> Child $22.00</p>
+            </div>
           </article> 
           <article id="Standard-Seats">
+            <img src="../../media/Profern-Standard-Twin.png" alt="Profern Standard Twin" id = "Profern-Standard-Twin">
+            <div id = "Standard-Prices">
+              <h3> Standard Seats</h3>
+              <p> Adult $21.50 </p>
+              <p> Concession $19</p>
+              <p> Child $17.50</p>
+            </div>
             
           </article>
           <article id="Discounted-Seats">
-            
+            <h3> Discounts</h3>
+            <p> Available weekday afternoons and all day Mondays </p>
+            <table>
+              <tr>
+                <th>Seat Type</th>
+                <th> Regular Price</th>
+                <th> Discounted Price!</th>
+                <th> Savings!</th>
+              </tr>
+              <tr>
+                <th>Standard Adult</th>
+                <th>$21.50</th>
+                <th>$16</th>
+                <th>$5.50</th>
+              </tr>
+              <tr>
+                <th>Standard Concession</th>
+                <th>$19</th>
+                <th>$14.50</th>
+                <th>$4.50</th>
+              </tr>
+              <tr>
+                <th>Standard Child</th>
+                <th>$17.50</th>
+                <th>$13</th>
+                <th>$4.50</th>
+              </tr>
+              <tr>
+                <th>First Class Adult</th>
+                <th>$31</th>
+                <th>$25</th>
+                <th>$6</th>
+              </tr>
+              <tr>
+                <th>First Class Concession</th>
+                <th>$28</th>
+                <th>$23.50</th>
+                <th>$4.50</th>
+              </tr>
+              <tr>
+                <th>First Class Child</th>
+                <th>$25</th>
+                <th>$22</th>
+                <th>$3</th>
+              </tr>
+            </table>
           </article>
       </section>
       
