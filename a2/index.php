@@ -35,7 +35,7 @@
       <section id='Seats-and-Prices'>
           <h2> Seats and Prices</h2>
           <article id="First-Class-Seats">
-            <img src="../media/Profern-Verona-Twin.png" alt="Profern Verona Twin">
+            <img src="../../media/Profern-Verona-Twin.png" alt="Profern Verona Twin">
           </article> 
           <article id="Standard-Seats">
             
