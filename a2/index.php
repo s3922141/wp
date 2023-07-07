@@ -18,25 +18,34 @@
     </header>
 
     <nav>
-    | <a href="#About Us">About Us</a> |
-    <a href="#Seats and Prices">Seats and Prices</a> |
-    <a href="#Now Showing">Now Showing</a> |
+    | <a href="#About-Us">About Us</a> |
+    <a href="#Seats-and-Prices">Seats and Prices</a> |
+    <a href="#Now-Showing">Now Showing</a> |
     <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php">Bookings</a> |
     </nav>
 
     <main>
-      <section id='About Us'>
+      <section id='About-Us'>
           <h2> About Us</h2>
           <p> The cinema has reopened after extensive improvements and renovations. </p>
           <p> There are new seats: standard seats and reclinable first class seats</p>
           <p> The projection and sound systems are upgraded with 3D Dolby Vision projection and Dolby Atmos sound.</p>
       </section>
 
-      <section id='Seats and Prices'>
+      <section id='Seats-and-Prices'>
           <h2> Seats and Prices</h2>
+          <article id="First-Class-Seats">
+            <img src="../media/Profern-Verona-Twin.png" alt="The First Class twin seat configuration">
+          </article> 
+          <article id="Standard-Seats">
+            
+          </article>
+          <article id="Discounted-Seats">
+            
+          </article>
       </section>
       
-      <section id='Now Showing'>
+      <section id='Now-Showing'>
         <h2> Now Showing</h2>
       </section>
     </main>

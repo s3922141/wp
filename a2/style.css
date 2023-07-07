@@ -21,6 +21,12 @@ body, html {
     background-color: rgba(12, 12, 12, 0.918);
     text-align: center;
     font-family: "Helvetica", sans-serif;
+    color: white;
+  }
+
+  footer {
+    background-color: darkgoldenrod;
+    color: black;
   }
   
   section {
@@ -30,4 +36,11 @@ body, html {
   
   h1, h2, h3, h4, h5, h6 {
     font-family: "Garamond", serif;
+  }
+
+  #About-Us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
