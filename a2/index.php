@@ -105,36 +105,129 @@
       
       <section id='Now-Showing'>
         <h2> Now Showing</h2>
-        <div id ="Movies1and2">
-          <div id ="Movie1">
-            <div class="flip-box-movie1">
-              <div class="flip-box-inner-movie1">
-                <div class ="movie1front">
-                  <img src="../../media/Oppenheimer.png" alt="Oppenheimer" id = "Oppenheimer">
+        <div id ="Allmovies">
+          <div id ="Movies1and2">
+            <div id ="Movie1">
+              <div class="flip-box-movie1" tabindex="0">
+                <div class="flip-box-inner-movie1">
+                  <div class ="movie1front">
+                    <img src="../../media/Oppenheimer.png" alt="Oppenheimer" id = "Oppenheimer">
+                  </div>
+                  <div class ="movie1back">
+                    <h3>Oppenheimer</h3>
+                    <p>The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb. </p>
+                    <h4>Session Times</h4>
+                    <table>
+                      <tr>
+                        <th> Mon-Tue </th>
+                        <th>   6pm </th>
+                      </tr>
+                      <tr>
+                        <th> Wed-Fri </th>
+                        <th>   - </th>
+                      </tr>
+                      <tr>
+                        <th> Sat-Sun </th>
+                        <th>   9pm </th>
+                      </tr>
+                    </table>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php" id="Book-Oppenheimer">Book Now</a>
+                  </div>
                 </div>
-                <div class ="movie1back">
-                  <h3>Oppenheimer</h3>
-                  <p>info about Oppenheimer</p>
+            </div>
+            <p> Oppenheimer, R </p>
+            <div id ="Movie2">
+              <div class="flip-box-movie2" tabindex="0">
+                <div class="flip-box-inner-movie2">
+                  <div class ="movie2front">
+                    <img src="../../media/Barbie.png" alt="Barbie" id = "Barbie">
+                  </div>
+                  <div class ="movie2back">
+                    <h3>Barbie</h3>
+                    <p>Barbie suffers a crisis that leads her to question her world and her existence. </p>
+                    <h4>Session Times</h4>
+                    <table>
+                      <tr>
+                        <th> Mon-Tue </th>
+                        <th>   - </th>
+                      </tr>
+                      <tr>
+                        <th> Wed-Fri </th>
+                        <th>   12pm </th>
+                      </tr>
+                      <tr>
+                        <th> Sat-Sun </th>
+                        <th>   3pm </th>
+                      </tr>
+                    </table>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php" id="Book-Barbie">Book Now</a>
+                  </div>
                 </div>
               </div>
+              <p> Barbie, PG-13 </p>
+            </div>
           </div>
-          <p> Oppenheimer, R </p>
-        </div>
-          <div id ="Movie2">
-            <img src="../../media/Barbie.png" alt="Barbie" id = "Barbie">
-            <p> Barbie, PG-13 </p>
+          <div id ="Movies3and4">
+            <div id ="Movie3">
+              <div class="flip-box-movie3" tabindex="0">
+                <div class="flip-box-inner-movie3">
+                  <div class ="movie3front">
+                    <img src="../../media/IndianaJones.png" alt="IndianaJones" id = "IndianaJones">
+                  </div>
+                  <div class ="movie3back">
+                    <h3>IndianaJones</h3>
+                    <p>Archaeologist Indiana Jones races against time to retrieve a legendary artifact that can change the course of history. </p>
+                    <h4>Session Times</h4>
+                    <table>
+                      <tr>
+                        <th> Mon-Tue </th>
+                        <th>   9pm </th>
+                      </tr>
+                      <tr>
+                        <th> Wed-Fri </th>
+                        <th>   9pm </th>
+                      </tr>
+                      <tr>
+                        <th> Sat-Sun </th>
+                        <th>   6pm </th>
+                      </tr>
+                    </table>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php" id="Book-IndianaJones">Book Now</a>
+                  </div>
+                </div>
+            </div>
+            <p> IndianaJones, PG-13 </p>
+            <div id ="Movie4">
+              <div class="flip-box-movie4" tabindex="0">
+                <div class="flip-box-inner-movie4">
+                  <div class ="movie4front">
+                    <img src="../../media/TMNT.png" alt="TMNT" id = "TMNT">
+                  </div>
+                  <div class ="movie4back">
+                    <h3>TMNT</h3>
+                    <p>The Turtle brothers as they work to earn the love of New York City while facing down an army of mutants. </p>
+                    <h4>Session Times</h4>
+                    <table>
+                      <tr>
+                        <th> Mon-Tue </th>
+                        <th>   12pm </th>
+                      </tr>
+                      <tr>
+                        <th> Wed-Fri </th>
+                        <th>   6pm </th>
+                      </tr>
+                      <tr>
+                        <th> Sat-Sun </th>
+                        <th>   12pm </th>
+                      </tr>
+                    </table>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php" id="Book-TMNT">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <p> TMNT, PG-13 </p>
+            </div>
           </div>
-        </div>
-        <div id ="Movies3and4">
-          <div id ="Movie3">
-            <img src="../../media/IndianaJones.png" alt="Indiana Jones and the Dial of Destiny " id = "IndianaJones">
-            <p> Indiana Jones and the Dial of Destiny, PG-13</p>
-          </div>
-          <div id ="Movie4">
-            <img src="../../media/TMNT.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem" id = "TMNT">
-            <p> Teenage Mutant Ninja Turtles: Mutant Mayhem, PG-13</p>
-          </div>
-        </div>
         
       </section>
     </main>
