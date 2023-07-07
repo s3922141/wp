@@ -1,24 +1,33 @@
 header {
   height: 100px;
-  background-color: rgba(65, 8, 8, 0.747);
+  background-color: darkred;
+  text-align: center;
   }
 
-nav {
+nav, nav a {
   height: 20px;
+  min-width: calc(100vw - 20px);
   position: sticky;
   top: 0;
   z-index: 100;
+  background-color: darkgoldenrod;
+  color: black;
 }
 
 body, html {
     height: fit-content;
     margin: 0;
     padding: 0;
+    background-color: rgba(12, 12, 12, 0.918);
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
   }
   
   section {
     padding-top: 20px;
     min-height: calc(100vh - 20px);
-    background-color: rgba(12, 12, 12, 0.918);
   }
   
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Garamond", serif;
+  }

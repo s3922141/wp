@@ -14,11 +14,11 @@
   <body>
 
     <header>
-      <div>Lunardo</div>
+      <h1>Lunardo</h1>
     </header>
 
     <nav>
-      <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/index.php">Home</a> |
+      | <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/index.php">Home</a> |
     </nav>
 
     <main>
@@ -32,6 +32,7 @@
       <p> content goes here</p>
     </main>
     <footer>
+      <div>| Lunardo@emailplace.com.au | 035967876 | 23 Main street, Springfield |</div>
       <div>&copy;<script>
         document.write(new Date().getFullYear());
       </script>, Benjamin Finn, S3922141, <a href="https://github.com/s3922141/wp">Github</a>, Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
