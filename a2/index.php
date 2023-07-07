@@ -105,6 +105,37 @@
       
       <section id='Now-Showing'>
         <h2> Now Showing</h2>
+        <div id ="Movies1and2">
+          <div id ="Movie1">
+            <div class="flip-box-movie1">
+              <div class="flip-box-inner-movie1">
+                <div class ="movie1front">
+                  <img src="../../media/Oppenheimer.png" alt="Oppenheimer" id = "Oppenheimer">
+                </div>
+                <div class ="movie1back">
+                  <h3>Oppenheimer</h3>
+                  <p>info about Oppenheimer</p>
+                </div>
+              </div>
+          </div>
+          <p> Oppenheimer, R </p>
+        </div>
+          <div id ="Movie2">
+            <img src="../../media/Barbie.png" alt="Barbie" id = "Barbie">
+            <p> Barbie, PG-13 </p>
+          </div>
+        </div>
+        <div id ="Movies3and4">
+          <div id ="Movie3">
+            <img src="../../media/IndianaJones.png" alt="Indiana Jones and the Dial of Destiny " id = "IndianaJones">
+            <p> Indiana Jones and the Dial of Destiny, PG-13</p>
+          </div>
+          <div id ="Movie4">
+            <img src="../../media/TMNT.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem" id = "TMNT">
+            <p> Teenage Mutant Ninja Turtles: Mutant Mayhem, PG-13</p>
+          </div>
+        </div>
+        
       </section>
     </main>
 
