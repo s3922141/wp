@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lunardo Home Page</title>
-
+    
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
@@ -15,6 +15,7 @@
 
     <header>
       <h1>Lunardo</h1>
+      <img src="../../media/LunardoLogo.png" alt="Lunardo Logo" id = "LunardoLogo">
     </header>
 
     <nav>
@@ -57,7 +58,7 @@
             <h3> Discounts</h3>
             <p> Available weekday afternoons and all day Mondays </p>
             <table>
-              <tr>
+              <tr id ="TableHeadings">
                 <th>Seat Type</th>
                 <th> Regular Price</th>
                 <th> Discounted Price!</th>
