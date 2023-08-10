@@ -22,7 +22,7 @@
     | <a href="#About-Us">About Us</a> |
     <a href="#Seats-and-Prices">Seats and Prices</a> |
     <a href="#Now-Showing">Now Showing</a> |
-    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php">Bookings</a> |
+    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php">Bookings</a> |
     </nav>
 
     <main>
@@ -132,7 +132,7 @@
                         <th>   9pm </th>
                       </tr>
                     </table>
-                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php" id="Book-Oppenheimer">Book Now</a>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php" id="Book-Oppenheimer">Book Now</a>
                   </div>
                 </div>
             </div>
@@ -161,7 +161,7 @@
                         <th>   3pm </th>
                       </tr>
                     </table>
-                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php" id="Book-Barbie">Book Now</a>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php" id="Book-Barbie">Book Now</a>
                   </div>
                 </div>
               </div>
@@ -193,7 +193,7 @@
                         <th>   6pm </th>
                       </tr>
                     </table>
-                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php" id="Book-IndianaJones">Book Now</a>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php" id="Book-IndianaJones">Book Now</a>
                   </div>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                         <th>   12pm </th>
                       </tr>
                     </table>
-                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a2/booking.php" id="Book-TMNT">Book Now</a>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php" id="Book-TMNT">Book Now</a>
                   </div>
                 </div>
               </div>
