@@ -19,6 +19,11 @@ nav, nav a {
   color: black;
 }
 
+nav a.active {
+  color: whitesmoke;
+  transition: 0.3s;
+}
+
 body, html {
     height: fit-content;
     margin: 0;
