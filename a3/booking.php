@@ -48,9 +48,7 @@
             </label>
         </fieldset>
 
-        <div id="screenings-container">
-        <!-- The fetched screenings will be displayed here -->
-        </div>
+        <div id="movie-details"></div>
 
         <fieldset>
             <legend>Select a screening time!</legend>
