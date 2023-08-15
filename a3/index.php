@@ -11,10 +11,6 @@
     <script src='script.js'></script>
   </head>
 
-  <?php
-    $selectedMovie = $_GET['movie'];
-    ?>
-
   <body>
 
     <header>
