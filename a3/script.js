@@ -68,34 +68,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
-
-// Get references to the radio buttons and screenings container
-const radioButtons = document.querySelectorAll('input[name="movie"]');
-const screeningsContainer = document.getElementById('screenings-container');
-
-// Add a change event listener to the radio buttons
-radioButtons.forEach(radioButton => {
-  radioButton.addEventListener('change', async () => {
-    // Clear previous content
-    screeningsContainer.innerHTML = '';
-
-    // Get the selected movie's key (e.g., 'ACT', 'RMC', etc.)
-    const selectedMovieKey = radioButton.value;
-
-    // Fetch the screenings for the selected movie using the moviesObject array
-    const selectedMovie = moviesObject[selectedMovieKey];
-    if (selectedMovie) {
-      // Create and display the list of screenings
-      const screeningsList = document.createElement('ul');
-      for (const day in selectedMovie.screenings) {
-        const screening = selectedMovie.screenings[day];
-        const screeningItem = document.createElement('li');
-        screeningItem.textContent = `Day: ${day}, Time: ${screening.time}, Rate: ${screening.rate}`;
-        screeningsList.appendChild(screeningItem);
-      }
-
-      // Append the list to the container
-      screeningsContainer.appendChild(screeningsList);
-    }
-  });
-});

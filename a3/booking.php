@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang='en'>
   <head>
@@ -54,9 +58,7 @@
 
         <fieldset>
             <legend>Select a screening time!</legend>
-            <select id="screening-times">
-                <!-- Dynamic options will be added here -->
-            </select>
+
         </fieldset>
 
         <!-- Dropdowns for Seat Types -->
