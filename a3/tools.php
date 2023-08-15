@@ -140,9 +140,16 @@
     ],
   ];
 
-/* Put your PHP variables, functions and modules here.
-   Many will be provided in the teaching materials,
-   keep a look out for them!
-*/
+// Set the response header to indicate JSON content
+header('Content-Type: application/json');
+
+// Check if the 'movie' parameter is set and corresponds to a valid movie
+if (isset($_GET['movie']) && array_key_exists($_GET['movie'], $moviesObject)) {
+    $selectedMovie = $moviesObject[$_GET['movie']];
+    echo json_encode($selectedMovie);
+} else {
+    // If movie is not valid or not provided, return an error response
+    echo json_encode(['error' => 'Invalid movie selection']);
+}
 
 ?>
