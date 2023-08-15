@@ -8,6 +8,9 @@
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
+    <script>
+        const moviesObject = <?php echo json_encode($moviesObject); ?>;
+    </script>
     <script src='script.js'></script>
   </head>
 
@@ -47,9 +50,6 @@
                 Oppenheimer
             </label>
         </fieldset>
-
-        <div id="movies-data" data-movies='<?php echo json_encode($moviesObject); ?>' style="display: none;"></div>
-
 
         <fieldset>
             <legend>Select a screening time:</legend>
