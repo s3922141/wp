@@ -33,6 +33,10 @@ body, html {
     font-family: "Helvetica", sans-serif;
   }
 
+  form {
+    color: whitesmoke;
+  }
+
   footer {
     background-color: darkgoldenrod;
     color: black;

@@ -55,3 +55,16 @@ function updateNowShowingLink() {
 window.addEventListener('scroll', updateAboutUsLink);
 window.addEventListener('scroll', updateSeatsandPricesLink);
 window.addEventListener('scroll', updateNowShowingLink);
+
+document.addEventListener("DOMContentLoaded", function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var selectedMovie = urlParams.get("movie");
+    var radioButtons = document.getElementsByName("movie");
+
+    for (var i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].value === selectedMovie) {
+            radioButtons[i].checked = true;
+            break;
+        }
+    }
+});

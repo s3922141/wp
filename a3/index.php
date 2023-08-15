@@ -11,6 +11,10 @@
     <script src='script.js'></script>
   </head>
 
+  <?php
+    $selectedMovie = $_GET['movie'];
+    ?>
+
   <body>
 
     <header>
@@ -132,7 +136,7 @@
                         <th>   9pm </th>
                       </tr>
                     </table>
-                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php" id="Book-Oppenheimer">Book Now</a>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php?movie=DRM" id="Book-Oppenheimer">Book Now</a>
                   </div>
                 </div>
             </div>
@@ -161,7 +165,7 @@
                         <th>   3pm </th>
                       </tr>
                     </table>
-                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php" id="Book-Barbie">Book Now</a>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php?movie=RMC" id="Book-Barbie">Book Now</a>
                   </div>
                 </div>
               </div>
@@ -193,7 +197,7 @@
                         <th>   6pm </th>
                       </tr>
                     </table>
-                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php" id="Book-IndianaJones">Book Now</a>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php?movie=ACT" id="Book-IndianaJones">Book Now</a>
                   </div>
                 </div>
             </div>
@@ -222,7 +226,7 @@
                         <th>   12pm </th>
                       </tr>
                     </table>
-                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php" id="Book-TMNT">Book Now</a>
+                    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php?movie=ANM" id="Book-TMNT">Book Now</a>
                   </div>
                 </div>
               </div>
