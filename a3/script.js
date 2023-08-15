@@ -69,22 +69,33 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const movieSelection = document.querySelectorAll('input[name="movie"]');
-    const screeningTimes = document.getElementById('screening-times');
+// Get references to the radio buttons and screenings container
+const radioButtons = document.querySelectorAll('input[name="movie"]');
+const screeningsContainer = document.getElementById('screenings-container');
 
-    movieSelection.forEach(radio => {
-        radio.addEventListener('change', (event) => {
-            const selectedMovie = event.target.value;
-            const movieData = moviesObject[selectedMovie];
-            const screeningList = movieData.screenings;
+// Add a change event listener to the radio buttons
+radioButtons.forEach(radioButton => {
+  radioButton.addEventListener('change', async () => {
+    // Clear previous content
+    screeningsContainer.innerHTML = '';
 
-            const screeningHTML = Object.keys(screeningList).map(day => {
-                const time = screeningList[day].time;
-                return `<option value="${time}">${day} - ${time}</option>`;
-            }).join('');
+    // Get the selected movie's key (e.g., 'ACT', 'RMC', etc.)
+    const selectedMovieKey = radioButton.value;
 
-            screeningTimes.innerHTML = screeningHTML;
-        });
-    });
+    // Fetch the screenings for the selected movie using the moviesObject array
+    const selectedMovie = moviesObject[selectedMovieKey];
+    if (selectedMovie) {
+      // Create and display the list of screenings
+      const screeningsList = document.createElement('ul');
+      for (const day in selectedMovie.screenings) {
+        const screening = selectedMovie.screenings[day];
+        const screeningItem = document.createElement('li');
+        screeningItem.textContent = `Day: ${day}, Time: ${screening.time}, Rate: ${screening.rate}`;
+        screeningsList.appendChild(screeningItem);
+      }
+
+      // Append the list to the container
+      screeningsContainer.appendChild(screeningsList);
+    }
+  });
 });

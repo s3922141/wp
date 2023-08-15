@@ -8,10 +8,7 @@
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
-    <script>
-        const moviesObject = <?php echo json_encode($moviesObject); ?>;
-    </script>
-    <script src='script.js'></script>
+ 
   </head>
 
   <body>
@@ -51,8 +48,12 @@
             </label>
         </fieldset>
 
+        <div id="screenings-container">
+        <!-- The fetched screenings will be displayed here -->
+        </div>
+
         <fieldset>
-            <legend>Select a screening time:</legend>
+            <legend>Select a screening time!</legend>
             <select id="screening-times">
                 <!-- Dynamic options will be added here -->
             </select>
