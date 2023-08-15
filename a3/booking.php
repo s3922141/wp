@@ -48,6 +48,9 @@
             </label>
         </fieldset>
 
+        <div id="movies-data" data-movies='<?php echo json_encode($moviesObject); ?>' style="display: none;"></div>
+
+
         <fieldset>
             <legend>Select a screening time:</legend>
             <select id="screening-times">
@@ -55,45 +58,70 @@
             </select>
         </fieldset>
 
-        <fieldset>
-            <legend>Select your seats!</legend>
-            
-            <div class="option">
-                <label for="option1">First Class Standard:</label>
-                <select id="option1" name="option1">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <!-- Add more options as needed -->
-                </select>
-            </div>
-            
-            <div class="option">
-                <label for="option2">Option 2:</label>
-                <select id="option2" name="option2">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <!-- Add more options as needed -->
-                </select>
-            </div>
-            
-            <!-- Add more option blocks as needed -->
-            
-        </fieldset>
-
         <!-- Dropdowns for Seat Types -->
         <fieldset>
             <legend>Select Seat Types</legend>
-            <select name="seats[STA]" data-fullprice="21.5" data-discprice="16">
+
+            <label for = "First Class Adult">First Class Adult:</label>
+            <select name="seats[FCA]" name="First Class Adult">
                 <option value="" disabled selected>Please select</option>
                 <?php
-                    for ($i = 1; $i <= 10; $i++) {
+                    for ($i = 0; $i <= 10; $i++) {
                         echo "<option value='$i'>$i</option>";
                     }
                 ?>
             </select>
-            <!-- Add other seat types here -->
+            
+            <label for = "First Class Concession">First Class Concession:</label>
+            <select name="seats[FCS]" name="First Class Concession">
+                <option value="" disabled selected>Please select</option>
+                <?php
+                    for ($i = 0; $i <= 10; $i++) {
+                        echo "<option value='$i'>$i</option>";
+                    }
+                ?>
+            </select>
+
+            <label for = "First Class Child">First Class Child:</label>
+            <select name="seats[FCC]" name="First Class Child">
+                <option value="" disabled selected>Please select</option>
+                <?php
+                    for ($i = 0; $i <= 10; $i++) {
+                        echo "<option value='$i'>$i</option>";
+                    }
+                ?>
+            </select>
+
+            <label for = "Standard Adult">Standard Adult:</label>
+            <select name="seats[STA]" name="Standard Adult">
+                <option value="" disabled selected>Please select</option>
+                <?php
+                    for ($i = 0; $i <= 10; $i++) {
+                        echo "<option value='$i'>$i</option>";
+                    }
+                ?>
+            </select>
+
+            <label for = "Standard Adult">Standard Adult:</label>
+            <select name="seats[STA]" name="Standard Adult">
+                <option value="" disabled selected>Please select</option>
+                <?php
+                    for ($i = 0; $i <= 10; $i++) {
+                        echo "<option value='$i'>$i</option>";
+                    }
+                ?>
+            </select>
+
+            <label for = "Standard Adult">Standard Adult:</label>
+            <select name="seats[STA]" name="Standard Adult">
+                <option value="" disabled selected>Please select</option>
+                <?php
+                    for ($i = 0; $i <= 10; $i++) {
+                        echo "<option value='$i'>$i</option>";
+                    }
+                ?>
+            </select>
+
         </fieldset>
 
         <!-- Text-based Fields -->

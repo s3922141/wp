@@ -72,14 +72,14 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', () => {
     const movieSelection = document.querySelectorAll('input[name="movie"]');
     const screeningTimes = document.getElementById('screening-times');
+    
+    const moviesDataElement = document.getElementById('movies-data');
+    const moviesObject = JSON.parse(moviesDataElement.getAttribute('data-movies'));
 
     movieSelection.forEach(radio => {
-        radio.addEventListener('change', async (event) => {
+        radio.addEventListener('change', (event) => {
             const selectedMovie = event.target.value;
-            const response = await fetch('tools.php');
-            const data = await response.json();
-
-            const movieData = data[selectedMovie];
+            const movieData = moviesObject[selectedMovie];
             const screeningList = movieData.screenings;
 
             const screeningHTML = Object.keys(screeningList).map(day => {
@@ -91,3 +91,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
