@@ -86,22 +86,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function fetchMovieDetails(movieCode) {
         const url = `tools.php?movie=${movieCode}`;
-
+    
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                const movie = data[movieCode];
-                if (movie) {
+                if ('error' in data) {
+                    movieDetailsDiv.innerHTML = '<p>Invalid movie selection.</p>';
+                } else {
                     const details = `
-                        <h2>${movie.title}</h2>
-                        <p>Genre: ${movie.genre}</p>
-                        <p>Rating: ${movie.rating}</p>
-                        <p>Summary: ${movie.summary}</p>
+                        <h2>${data.title}</h2>
+                        <p>Genre: ${data.genre}</p>
+                        <p>Rating: ${data.rating}</p>
+                        <p>Summary: ${data.summary}</p>
                         <!-- Add more details as needed -->
                     `;
                     movieDetailsDiv.innerHTML = details;
-                } else {
-                    movieDetailsDiv.innerHTML = '<p>No movie details available.</p>';
                 }
             })
             .catch(error => {
