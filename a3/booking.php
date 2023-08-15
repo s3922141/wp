@@ -49,62 +49,10 @@
         </fieldset>
 
         <fieldset>
-            <legend>Pick a day!</legend>
-            <label class="day-label">
-                <input type="radio" name="day" value="MON" >
-                Monday
-            </label>
-            <label class="day-label">
-                <input type="radio" name="day" value="TUE" >
-                Tuesday
-            </label>
-            <label class="day-label">
-                <input type="radio" name="day" value="WED" >
-                Wednesday
-            </label>
-            <label class="day-label">
-                <input type="radio" name="day" value="THU" >
-                Thursday
-            </label>
-            <label class="day-label">
-                <input type="radio" name="day" value="FRI" >
-                Friday
-            </label>
-            <label class="day-label">
-                <input type="radio" name="day" value="SAT" >
-                Saturday
-            </label>
-            <label class="day-label">
-                <input type="radio" name="day" value="SUN" >
-                Sunday
-            </label>
-        </fieldset>
-
-        <fieldset>
             <legend>Select a screening time:</legend>
             <select id="screening-times">
                 <!-- Dynamic options will be added here -->
             </select>
-        </fieldset>
-
-        <fieldset>
-            <legend>Pick a time!</legend>
-            <label class="time-label">
-                <input type="radio" name="time" value="3PM" >
-                3pm
-            </label>
-            <label class="time-label">
-                <input type="radio" name="time" value="6PM" >
-                6pm
-            </label>
-            <label class="time-label">
-                <input type="radio" name="time" value="9PM" >
-                9pm
-            </label>
-            <label class="time-label">
-                <input type="radio" name="time" value="12P" >
-                12pm
-            </label>
         </fieldset>
 
         <fieldset>
