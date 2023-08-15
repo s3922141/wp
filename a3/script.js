@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function fetchMovieDetails(movieCode) {
-        const url = 'tools.php';
+        const url = `tools.php?movie=${movieCode}`;
 
         fetch(url)
             .then(response => response.json())
