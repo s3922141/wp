@@ -41,9 +41,103 @@
         ]
       ]
     ],
-    'RMC' => [/* Put structured Rom-Com movie details here */],
-    'ANM' => [/* Put structured Animation movie details here */],
-    'DRM' => [/* Put structured Drama movie details here */],
+    'RMC' => [
+    'title' => 'Barbie',
+    'rating' => 'PG-13',
+    'genre' => 'Adventure, Comedy, Fantasy',
+    'summary' => 'Barbie suffers a crisis that leads her to question her world and her existence.',
+    'plot' => '',
+    'imdb' => 'tt1517268',
+    'screening-summary' => 'Wednesday - Friday: 12pm, Saturday - Sunday: 3pm',
+    'screenings' => [
+      'WED' => [
+        'time' => '12pm',
+        'rate' => 'discount'
+      ],
+      'THU' => [
+        'time' => '12pm',
+        'rate' => 'discount'
+      ],
+      'FRI' => [
+        'time' => '12pm',
+        'rate' => 'discount'
+      ],
+      'SAT' => [
+        'time' => '3pm',
+        'rate' => 'regular'
+      ],
+      'SUN' => [
+        'time' => '3pm',
+        'rate' => 'regular'
+        ]
+      ]
+    ],
+    'ANM' => [
+      'title' => 'Teenage Mutant Ninja Turtles: Mutant Mayhem',
+      'rating' => 'PG-13',
+      'genre' => 'Action, Adventure',
+      'summary' => 'The Turtle brothers as they work to earn the love of New York City while facing down an army of mutants.',
+      'plot' => '',
+      'imdb' => 'tt8589698',
+      'screening-summary' => 'Monday - Tuesday: 12pm, Wednesday - Friday: 6pm, Saturday - Sunday: 12pm',
+      'screenings' => [
+        'MON' => [
+          'time' => '12pm',
+          'rate' => 'discount'
+        ],
+        'TUE' => [
+          'time' => '12pm',
+          'rate' => 'regular'
+        ],
+        'WED' => [
+          'time' => '6pm',
+          'rate' => 'regular'
+        ],
+        'THU' => [
+          'time' => '6pm',
+          'rate' => 'regular'
+        ],
+        'FRI' => [
+          'time' => '6pm',
+          'rate' => 'regular'
+        ],
+        'SAT' => [
+          'time' => '12pm',
+          'rate' => 'regular'
+        ],
+        'SUN' => [
+          'time' => '12pm',
+          'rate' => 'regular'
+        ]
+      ]
+    ],
+    'DRM' => [
+      'title' => 'Oppenheimer',
+      'rating' => 'R',
+      'genre' => 'Action, Adventure',
+      'summary' => 'The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.',
+      'plot' => '',
+      'imdb' => 'tt15398776',
+      'screening-summary' => 'Monday - Tuesday: 6pm, Saturday - Sunday: 9pm',
+      'screenings' => [
+        'MON' => [
+          'time' => '6pm',
+          'rate' => 'discount'
+        ],
+        'TUE' => [
+          'time' => '6pm',
+          'rate' => 'regular'
+        ],
+        'SAT' => [
+          'time' => '9pm',
+          'rate' => 'regular'
+        ],
+        'SUN' => [
+          'time' => '9pm',
+          'rate' => 'regular'
+        ]
+      ]
+    ],
   ];
 
 /* Put your PHP variables, functions and modules here.

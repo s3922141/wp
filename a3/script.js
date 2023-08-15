@@ -68,3 +68,26 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const movieSelection = document.querySelectorAll('input[name="movie"]');
+    const screeningTimes = document.getElementById('screening-times');
+
+    movieSelection.forEach(radio => {
+        radio.addEventListener('change', async (event) => {
+            const selectedMovie = event.target.value;
+            const response = await fetch('tools.php');
+            const data = await response.json();
+
+            const movieData = data[selectedMovie];
+            const screeningList = movieData.screenings;
+
+            const screeningHTML = Object.keys(screeningList).map(day => {
+                const time = screeningList[day].time;
+                return `<option value="${time}">${day} - ${time}</option>`;
+            }).join('');
+
+            screeningTimes.innerHTML = screeningHTML;
+        });
+    });
+});

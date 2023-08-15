@@ -81,6 +81,13 @@
         </fieldset>
 
         <fieldset>
+            <legend>Select a screening time:</legend>
+            <select id="screening-times">
+                <!-- Dynamic options will be added here -->
+            </select>
+        </fieldset>
+
+        <fieldset>
             <legend>Pick a time!</legend>
             <label class="time-label">
                 <input type="radio" name="time" value="3PM" >
