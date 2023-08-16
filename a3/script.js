@@ -214,3 +214,35 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call updateTotalPrice once on initial load
     updateTotalPrice();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const rememberMeCheckbox = document.getElementById('remember-me-checkbox');
+    const nameInput = document.querySelector('input[name="customer[name]"]');
+    const emailInput = document.querySelector('input[name="customer[email]"]');
+    const mobileInput = document.querySelector('input[name="customer[mobile]"]');
+
+    // Load saved customer details from localStorage if "Remember Me" was checked
+    if (localStorage.getItem('rememberMe') === 'true') {
+        rememberMeCheckbox.checked = true;
+        nameInput.value = localStorage.getItem('customerName');
+        emailInput.value = localStorage.getItem('customerEmail');
+        mobileInput.value = localStorage.getItem('customerMobile');
+    }
+
+    // Add change event listener to "Remember Me" checkbox
+    rememberMeCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            // Save customer details to localStorage
+            localStorage.setItem('rememberMe', 'true');
+            localStorage.setItem('customerName', nameInput.value);
+            localStorage.setItem('customerEmail', emailInput.value);
+            localStorage.setItem('customerMobile', mobileInput.value);
+        } else {
+            // Remove customer details from localStorage
+            localStorage.removeItem('rememberMe');
+            localStorage.removeItem('customerName');
+            localStorage.removeItem('customerEmail');
+            localStorage.removeItem('customerMobile');
+        }
+    });
+});

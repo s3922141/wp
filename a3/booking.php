@@ -136,6 +136,11 @@
             <label>Full Name: <input type="text" name="customer[name]" required></label><br>
             <label>Email: <input type="email" name="customer[email]" required></label><br>
             <label>Australian Mobile: <input type="tel" name="customer[mobile]" pattern="[0-9]{10}" required></label><br>
+            <label>
+                <input type="checkbox" id="remember-me-checkbox" name="remember-me">
+                Remember Me
+            </label>
+
         </fieldset>
 
         <button type="submit">Submit Booking</button>
