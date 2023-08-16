@@ -124,18 +124,18 @@
             </select>
 
         </fieldset>
-        
+
         <div id="total-price">
             <span id="total-price-display">Total Price: $0.00</span>
         </div>
-
+        <button id="update-price-button">Update Total Price</button>
 
         <!-- Text-based Fields -->
-        <fieldset>
+       <fieldset>
             <legend>Customer Details</legend>
-            <label>Full Name: <input type="text" name="customer[name]" required></label><br>
-            <label>Email: <input type="email" name="customer[email]" required></label><br>
-            <label>Australian Mobile: <input type="tel" name="customer[mobile]" pattern="[0-9]{10}" required></label><br>
+            <label>Full Name: <input type="text" name="customer[name]" ></label><br>
+            <label>Email: <input type="email" name="customer[email]" ></label><br>
+            <label>Australian Mobile: <input type="tel" name="customer[mobile]" pattern="[0-9]{10}" ></label><br>
         </fieldset>
 
         <button type="submit">Submit Booking</button>

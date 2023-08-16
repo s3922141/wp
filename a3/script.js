@@ -51,10 +51,15 @@ function updateNowShowingLink() {
     }
 }
 
-// Add scroll event listener to update the active link on scroll
-window.addEventListener('scroll', updateAboutUsLink);
-window.addEventListener('scroll', updateSeatsandPricesLink);
-window.addEventListener('scroll', updateNowShowingLink);
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if the current page is index.php before adding scroll event listeners
+    if (window.location.pathname.includes("index.php")) {
+        window.addEventListener('scroll', updateAboutUsLink);
+        window.addEventListener('scroll', updateSeatsandPricesLink);
+        window.addEventListener('scroll', updateNowShowingLink);
+    }
+});
+
 
 
 //called by booking.php grabs movie from url and auto selects matching button in pick a movie section
@@ -148,36 +153,13 @@ const prices = {
 };
 
 
-// Function to calculate and update the total price
 function updateTotalPrice() {
-    const selectedScreening = document.querySelector('input[name="screening-time"]:checked');
-    const selectedSeats = document.querySelectorAll('select[name^="seats"]');
-
-    if (selectedScreening && selectedSeats.length > 0) {
-        const screeningRate = selectedScreening.getAttribute('data-rate');
-        let totalPrice = 0;
-
-        selectedSeats.forEach(seat => {
-            const seatType = seat.name.split('[')[1].split(']')[0];
-            const seatCount = parseInt(seat.value);
-            const seatPrice = screeningRate === 'regular' ? prices.regular[seatType] : prices.discount[seatType];
-            
-            totalPrice += seatCount * seatPrice;
-        });
-
-        const totalPriceDisplay = document.getElementById('total-price-display');
-        totalPriceDisplay.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
-    }
+    const totalPriceDisplay = document.getElementById('total-price-display');
+    totalPriceDisplay.textContent = 'Total Price: $20.00';
 }
 
-// Add change event listeners to screening time and seat select elements
-const screeningTimeRadios = document.querySelectorAll('input[name="screening-time"]');
-const seatSelects = document.querySelectorAll('select[name^="seats"]');
+// Find the button element by its ID
+const updatePriceButton = document.getElementById('update-price-button');
 
-screeningTimeRadios.forEach(radio => {
-    radio.addEventListener('change', updateTotalPrice);
-});
-
-seatSelects.forEach(seat => {
-    seat.addEventListener('change', updateTotalPrice);
-});
+// Add a click event listener to the button
+updatePriceButton.addEventListener('click', updateTotalPrice);
