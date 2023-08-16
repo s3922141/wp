@@ -8,7 +8,7 @@
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
-    <script src='script.js'></script>
+    
   </head>
 
   <body>
@@ -23,7 +23,7 @@
 
     <h2>Booking Page</h2>
 
-    <form action="bookings.php" method="post">
+    <form action="booking.php" method="post">
         <!-- Hidden Field for Movie Code -->
         <input type="hidden" name="movie" value="ACT">
 
@@ -128,7 +128,7 @@
         <div id="total-price">
             <span id="total-price-display">Total Price: $0.00</span>
         </div>
-        <button id="update-price-button">Update Total Price</button>
+
 
         <!-- Text-based Fields -->
        <fieldset>
@@ -140,6 +140,8 @@
 
         <button type="submit">Submit Booking</button>
     </form>
+
+        <button id="update-price-button">Update Total Price</button>
 
     <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -171,4 +173,6 @@ SESSION Contains:
     </aside>
 
   </body>
+
+  <script src='script.js'></script>
 </html>

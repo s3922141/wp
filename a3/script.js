@@ -152,14 +152,50 @@ const prices = {
     }
 };
 
+// ... Your existing JavaScript code ...
+// Helper function to get the selected screening rate
+function getSelectedScreeningRate() {
+    const selectedScreening = document.querySelector('input[name="screening-time"]:checked');
+    if (selectedScreening) {
+        const selectedScreeningLabel = selectedScreening.parentElement.textContent;
+        if (selectedScreeningLabel.includes("(discount)")) {
+            return "discount";
+        } else {
+            return "regular";
+        }
+    }
+    return 'regular';
+}
+
 
 function updateTotalPrice() {
     const totalPriceDisplay = document.getElementById('total-price-display');
-    totalPriceDisplay.textContent = 'Total Price: $20.00';
+    const seatSelects = document.querySelectorAll('select[name^="seats"]');
+    const selectedScreeningRate = getSelectedScreeningRate();
+    let totalPrice = 0;
+
+    seatSelects.forEach(seat => {
+        const seatType = seat.name.split('[')[1].split(']')[0];
+        if (selectedScreeningRate === "discount") {
+            const seatPrice = prices.discount[seatType]; // You can adjust this based on your pricing data
+            totalPrice += seat.value * seatPrice;
+        } else {
+            const seatPrice = prices.regular[seatType]; // You can adjust this based on your pricing data
+            totalPrice += seat.value * seatPrice;
+        }
+    });
+
+    totalPriceDisplay.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
 }
 
-// Find the button element by its ID
-const updatePriceButton = document.getElementById('update-price-button');
+document.addEventListener("DOMContentLoaded", function() {
+    // Find the button element by its ID
+    const updatePriceButton = document.getElementById('update-price-button');
 
-// Add a click event listener to the button
-updatePriceButton.addEventListener('click', updateTotalPrice);
+    // Add a click event listener to the button
+    updatePriceButton.addEventListener('click', updateTotalPrice);
+});
+
+
+
+

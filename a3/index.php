@@ -22,7 +22,7 @@
     | <a href="#About-Us">About Us</a> |
     <a href="#Seats-and-Prices">Seats and Prices</a> |
     <a href="#Now-Showing">Now Showing</a> |
-    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php">Bookings</a> |
+    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a3/booking.php?movie=ACT">Bookings</a> |
     </nav>
 
     <main>
