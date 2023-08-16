@@ -92,6 +92,8 @@ function fetchMovieDetails(movieCode) {
             console.error('Error fetching movie details:', error);
             movieDetailsDiv.innerHTML = '<p>An error occurred while fetching movie details.</p>';
         });
+
+        const screeningTimeRadios = document.querySelectorAll('input[name="screening-time"]');
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -190,14 +192,6 @@ function updateTotalPrice() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Find the button element by its ID
-    const updatePriceButton = document.getElementById('update-price-button');
-
-    // Add a click event listener to the button
-    updatePriceButton.addEventListener('click', updateTotalPrice);
-});
-
-document.addEventListener("DOMContentLoaded", function() {
     const seatSelects = document.querySelectorAll('select[name^="seats"]');
     const screeningTimeRadios = document.querySelectorAll('input[name="screening-time"]');
 
@@ -206,10 +200,16 @@ document.addEventListener("DOMContentLoaded", function() {
         seat.addEventListener('change', updateTotalPrice);
     });
 
-    // Add change event listener to screening time selection
-    screeningTimeRadios.forEach(radio => {
-        radio.addEventListener('change', updateTotalPrice);
+    // Find the fieldset containing the screening time radio buttons
+    const screeningTimeFieldset = document.querySelector('#screening-time-radio-buttons');
+
+    // Add change event listener using event delegation
+    screeningTimeFieldset.addEventListener('change', function(event) {
+        if (event.target.name === 'screening-time') {
+            updateTotalPrice();
+        }
     });
+
 
     // Call updateTotalPrice once on initial load
     updateTotalPrice();

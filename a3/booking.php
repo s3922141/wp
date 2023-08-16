@@ -133,15 +133,13 @@
         <!-- Text-based Fields -->
        <fieldset>
             <legend>Customer Details</legend>
-            <label>Full Name: <input type="text" name="customer[name]" ></label><br>
-            <label>Email: <input type="email" name="customer[email]" ></label><br>
-            <label>Australian Mobile: <input type="tel" name="customer[mobile]" pattern="[0-9]{10}" ></label><br>
+            <label>Full Name: <input type="text" name="customer[name]" required></label><br>
+            <label>Email: <input type="email" name="customer[email]" required></label><br>
+            <label>Australian Mobile: <input type="tel" name="customer[mobile]" pattern="[0-9]{10}" required></label><br>
         </fieldset>
 
         <button type="submit">Submit Booking</button>
     </form>
-
-        <button id="update-price-button">Update Total Price</button>
 
     <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
