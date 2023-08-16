@@ -196,3 +196,21 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add a click event listener to the button
     updatePriceButton.addEventListener('click', updateTotalPrice);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const seatSelects = document.querySelectorAll('select[name^="seats"]');
+    const screeningTimeRadios = document.querySelectorAll('input[name="screening-time"]');
+
+    // Add change event listeners to seat selection elements
+    seatSelects.forEach(seat => {
+        seat.addEventListener('change', updateTotalPrice);
+    });
+
+    // Add change event listener to screening time selection
+    screeningTimeRadios.forEach(radio => {
+        radio.addEventListener('change', updateTotalPrice);
+    });
+
+    // Call updateTotalPrice once on initial load
+    updateTotalPrice();
+});
