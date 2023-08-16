@@ -93,6 +93,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 if ('error' in data) {
                     movieDetailsDiv.innerHTML = '<p>Invalid movie selection.</p>';
                 } else {
+                    const screenings = data.screenings;
+
+                    // Generate radio buttons for screening times
+                    const screeningTimeRadioDiv = document.getElementById('screening-time-radio-buttons');
+                    let screeningTimeRadios = '';
+                    for (const day in screenings) {
+                        const screening = screenings[day];
+                        screeningTimeRadios += `
+                            <label>
+                                <input type="radio" name="screening-time" value="${day}">
+                                ${day}: ${screening.time} (${screening.rate})
+                            </label><br>`;
+                    }
+                    screeningTimeRadioDiv.innerHTML = screeningTimeRadios;
+    
+                    // Update the main movie-details div with other movie information
                     const details = `
                         <h2>${data.title}</h2>
                         <p>Genre: ${data.genre}</p>
@@ -108,4 +124,60 @@ document.addEventListener("DOMContentLoaded", function() {
                 movieDetailsDiv.innerHTML = '<p>An error occurred while fetching movie details.</p>';
             });
     }
+});
+
+// ... Your existing JavaScript code ...
+
+const prices = {
+    regular: {
+        FCA: 31.00, // First Class Adult regular price
+        FCP: 28.00, // First Class Concession regular price
+        FCC: 25.00, // First Class Child regular price
+        STA: 21.50, // Standard Adult regular price
+        STP: 19.00, // Standard Concession regular price
+        STC: 17.50, // Standard Child regular price
+    },
+    discount: {
+        FCA: 25.00, // First Class Adult discount price
+        FCP: 23.50, // First Class Concession discount price
+        FCC: 22.00, // First Class Child discount price
+        STA: 16.00, // Standard Adult discount price
+        STP: 14.50, // Standard Concession discount price
+        STC: 13.00, // Standard Child discount price
+    }
+};
+
+
+// Function to calculate and update the total price
+function updateTotalPrice() {
+    const selectedScreening = document.querySelector('input[name="screening-time"]:checked');
+    const selectedSeats = document.querySelectorAll('select[name^="seats"]');
+
+    if (selectedScreening && selectedSeats.length > 0) {
+        const screeningRate = selectedScreening.getAttribute('data-rate');
+        let totalPrice = 0;
+
+        selectedSeats.forEach(seat => {
+            const seatType = seat.name.split('[')[1].split(']')[0];
+            const seatCount = parseInt(seat.value);
+            const seatPrice = screeningRate === 'regular' ? prices.regular[seatType] : prices.discount[seatType];
+            
+            totalPrice += seatCount * seatPrice;
+        });
+
+        const totalPriceDisplay = document.getElementById('total-price-display');
+        totalPriceDisplay.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+    }
+}
+
+// Add change event listeners to screening time and seat select elements
+const screeningTimeRadios = document.querySelectorAll('input[name="screening-time"]');
+const seatSelects = document.querySelectorAll('select[name^="seats"]');
+
+screeningTimeRadios.forEach(radio => {
+    radio.addEventListener('change', updateTotalPrice);
+});
+
+seatSelects.forEach(seat => {
+    seat.addEventListener('change', updateTotalPrice);
 });

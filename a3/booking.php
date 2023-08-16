@@ -48,11 +48,15 @@
             </label>
         </fieldset>
 
+        <input type="hidden" name="selected-screening" id="selected-screening">
+
         <div id="movie-details"></div>
+        <div id="screenings-details"></div>
+
 
         <fieldset>
             <legend>Select a screening time!</legend>
-
+            <div id="screening-time-radio-buttons"></div>
         </fieldset>
 
         <!-- Dropdowns for Seat Types -->
@@ -70,7 +74,7 @@
             </select>
             
             <label for = "First Class Concession">First Class Concession:</label>
-            <select name="seats[FCS]" name="First Class Concession">
+            <select name="seats[FCP]" name="First Class Concession">
                 <option value="" disabled selected>Please select</option>
                 <?php
                     for ($i = 0; $i <= 10; $i++) {
@@ -99,8 +103,8 @@
                 ?>
             </select>
 
-            <label for = "Standard Adult">Standard Adult:</label>
-            <select name="seats[STA]" name="Standard Adult">
+            <label for = "Standard Concession">Standard Concession:</label>
+            <select name="seats[STP]" name="Standard Concession">
                 <option value="" disabled selected>Please select</option>
                 <?php
                     for ($i = 0; $i <= 10; $i++) {
@@ -109,8 +113,8 @@
                 ?>
             </select>
 
-            <label for = "Standard Adult">Standard Adult:</label>
-            <select name="seats[STA]" name="Standard Adult">
+            <label for = "Standard Child">Standard Child:</label>
+            <select name="seats[STC]" name="Standard Child">
                 <option value="" disabled selected>Please select</option>
                 <?php
                     for ($i = 0; $i <= 10; $i++) {
@@ -120,6 +124,11 @@
             </select>
 
         </fieldset>
+        
+        <div id="total-price">
+            <span id="total-price-display">Total Price: $0.00</span>
+        </div>
+
 
         <!-- Text-based Fields -->
         <fieldset>
