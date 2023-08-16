@@ -51,6 +51,47 @@ function updateNowShowingLink() {
     }
 }
 
+function fetchMovieDetails(movieCode) {
+    const url = `tools.php?movie=${movieCode}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if ('error' in data) {
+                movieDetailsDiv.innerHTML = '<p>Invalid movie selection.</p>';
+            } else {
+                const screenings = data.screenings;
+
+                // Generate radio buttons for screening times
+                const screeningTimeRadioDiv = document.getElementById('screening-time-radio-buttons');
+                let screeningTimeRadios = '';
+                for (const day in screenings) {
+                    const screening = screenings[day];
+                    screeningTimeRadios += `
+                        <label>
+                            <input type="radio" name="screening-time" value="${day}">
+                            ${day}: ${screening.time} (${screening.rate})
+                        </label><br>`;
+                }
+                screeningTimeRadioDiv.innerHTML = screeningTimeRadios;
+
+                // Update the main movie-details div with other movie information
+                const details = `
+                    <h2>${data.title}</h2>
+                    <p>Genre: ${data.genre}</p>
+                    <p>Rating: ${data.rating}</p>
+                    <p>Summary: ${data.summary}</p>
+                    <!-- Add more details as needed -->
+                `;
+                movieDetailsDiv.innerHTML = details;
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching movie details:', error);
+            movieDetailsDiv.innerHTML = '<p>An error occurred while fetching movie details.</p>';
+        });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     // Check if the current page is index.php before adding scroll event listeners
     if (window.location.pathname.includes("index.php")) {
@@ -89,47 +130,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-
-    function fetchMovieDetails(movieCode) {
-        const url = `tools.php?movie=${movieCode}`;
-    
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if ('error' in data) {
-                    movieDetailsDiv.innerHTML = '<p>Invalid movie selection.</p>';
-                } else {
-                    const screenings = data.screenings;
-
-                    // Generate radio buttons for screening times
-                    const screeningTimeRadioDiv = document.getElementById('screening-time-radio-buttons');
-                    let screeningTimeRadios = '';
-                    for (const day in screenings) {
-                        const screening = screenings[day];
-                        screeningTimeRadios += `
-                            <label>
-                                <input type="radio" name="screening-time" value="${day}">
-                                ${day}: ${screening.time} (${screening.rate})
-                            </label><br>`;
-                    }
-                    screeningTimeRadioDiv.innerHTML = screeningTimeRadios;
-    
-                    // Update the main movie-details div with other movie information
-                    const details = `
-                        <h2>${data.title}</h2>
-                        <p>Genre: ${data.genre}</p>
-                        <p>Rating: ${data.rating}</p>
-                        <p>Summary: ${data.summary}</p>
-                        <!-- Add more details as needed -->
-                    `;
-                    movieDetailsDiv.innerHTML = details;
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching movie details:', error);
-                movieDetailsDiv.innerHTML = '<p>An error occurred while fetching movie details.</p>';
-            });
-    }
 });
 
 const prices = {
