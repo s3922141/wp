@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var i = 0; i < radioButtons.length; i++) {
         if (radioButtons[i].value === selectedMovie) {
             radioButtons[i].checked = true;
+            fetchMovieDetails(selectedMovie);
             break;
         }
     }
@@ -130,8 +131,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 });
-
-// ... Your existing JavaScript code ...
 
 const prices = {
     regular: {
@@ -195,7 +194,3 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add a click event listener to the button
     updatePriceButton.addEventListener('click', updateTotalPrice);
 });
-
-
-
-
