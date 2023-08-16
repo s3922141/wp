@@ -1,5 +1,7 @@
 alert("JavaScript is working!");
 
+const movieDetailsDiv = document.getElementById('movie-details');
+
 function updateAboutUsLink() {
     const aboutUsSection = document.getElementById('About-Us');
     const aboutUsLink = document.querySelector('nav a[href="#About-Us"]');
