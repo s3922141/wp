@@ -105,8 +105,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
-
 //called by booking.php grabs movie from url and auto selects matching button in pick a movie section
 document.addEventListener("DOMContentLoaded", function() {
     var urlParams = new URLSearchParams(window.location.search);
