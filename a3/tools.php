@@ -151,23 +151,4 @@ if (isset($_GET['movie']) && array_key_exists($_GET['movie'], $moviesObject)) {
     // If movie is not valid or not provided, return an error response
     echo json_encode(['error' => 'Invalid movie selection']);
 }
-
-$ratesObject = [
-  'regular' => [
-      'FCA' => 31.00, // First Class Adult regular price
-      'FCP' => 28.00, // First Class Concession regular price
-      'FCC' => 25.00, // First Class Child regular price
-      'STA' => 21.50, // Standard Adult regular price
-      'STP' => 19.00, // Standard Concession regular price
-      'STC' => 17.50, // Standard Child regular price
-  ],
-  'discount' => [
-      'FCA' => 25.00, // First Class Adult discount price
-      'FCP' => 23.50, // First Class Concession discount price
-      'FCC' => 22.00, // First Class Child discount price
-      'STA' => 16.00, // Standard Adult discount price
-      'STP' => 14.50, // Standard Concession discount price
-      'STC' => 13.00, // Standard Child discount price
-  ]
-];
 ?>

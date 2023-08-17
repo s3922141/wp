@@ -112,13 +112,18 @@ document.addEventListener("DOMContentLoaded", function() {
     var urlParams = new URLSearchParams(window.location.search);
     var selectedMovie = urlParams.get("movie");
     var radioButtons = document.getElementsByName("movie");
+    var movieMatched = false;
 
     for (var i = 0; i < radioButtons.length; i++) {
         if (radioButtons[i].value === selectedMovie) {
             radioButtons[i].checked = true;
             fetchMovieDetails(selectedMovie);
+            movieMatched = true;
             break;
         }
+    }
+    if (!movieMatched) {
+        alert("No movie match!");
     }
 });
 
