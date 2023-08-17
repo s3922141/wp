@@ -23,7 +23,7 @@
 
     <h2>Booking Page</h2>
 
-    <form action="booking.php" method="post">
+    <form action="booking.php?movie=ACT" method="post">
         <!-- Hidden Field for Movie Code -->
         <input type="hidden" name="movie" value="ACT">
 
@@ -135,7 +135,7 @@
             <legend>Customer Details</legend>
             <label>Full Name: <input type="text" name="customer[name]" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'\-]+" required></label><br>
             <label>Email: <input type="email" name="customer[email]" required></label><br>
-            <label>Australian Mobile: <input type="tel" name="customer[mobile]" pattern="^(?:(?:\+61)|(?:0))[2-478](?:[ ]?\d{4}[ ]?\d{4})$" required></label><br>
+            <label>Australian Mobile: <input type="tel" name="customer[mobile]" pattern="[0-9]{10}" required></label><br>
             <label>
                 <input type="checkbox" id="remember-me-checkbox" name="remember-me">
                 Remember Me
