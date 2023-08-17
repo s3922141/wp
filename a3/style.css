@@ -456,5 +456,12 @@ label {
   vertical-align: middle; 
 }
 
+.custom-fieldset {
+  border: 2px solid #ccc;
+  padding: 10px;
+}
 
-
+.custom-fieldset label,
+.custom-fieldset select {
+  display: inline-block;
+}

@@ -58,70 +58,83 @@
         </fieldset>
 
          <!--dropdowns for each seat type-->
-        <fieldset>
+        <fieldset class="seat-selection">
             <legend>Select Seat Types</legend>
 
-            <label for = "First Class Adult">First Class Adult:</label>
-            <select name="seats[FCA]" name="First Class Adult">
-                <option value="" disabled selected>Please select</option>
-                <?php
+            <div class="seat-row">
+                <label for="First-Class-Adult">First Class Adult:</label>
+                <select name="seats[FCA]" id="First-Class-Adult">
+                    <option value="" disabled selected>Please select</option>
+                    <?php
                     for ($i = 0; $i <= 10; $i++) {
                         echo "<option value='$i'>$i</option>";
                     }
-                ?>
-            </select>
+                    ?>
+                </select>
+            </div>
             
-            <label for = "First Class Concession">First Class Concession:</label>
-            <select name="seats[FCP]" name="First Class Concession">
-                <option value="" disabled selected>Please select</option>
-                <?php
+            <div class="seat-row">
+                <label for="First-Class-Concession">First Class Concession:</label>
+                <select name="seats[FCP]" id="First-Class-Concession">
+                    <option value="" disabled selected>Please select</option>
+                    <?php
                     for ($i = 0; $i <= 10; $i++) {
                         echo "<option value='$i'>$i</option>";
                     }
-                ?>
-            </select>
+                    ?>
+                </select>
+            </div>
 
-            <label for = "First Class Child">First Class Child:</label>
-            <select name="seats[FCC]" name="First Class Child">
-                <option value="" disabled selected>Please select</option>
-                <?php
+            <div class="seat-row">
+                <label for="First-Class-Child">First Class Child:</label>
+                <select name="seats[FCC]" id="First-Class-Child">
+                    <option value="" disabled selected>Please select</option>
+                    <?php
                     for ($i = 0; $i <= 10; $i++) {
                         echo "<option value='$i'>$i</option>";
                     }
-                ?>
-            </select>
+                    ?>
+                </select>
+            </div>
 
-            <label for = "Standard Adult">Standard Adult:</label>
-            <select name="seats[STA]" name="Standard Adult">
-                <option value="" disabled selected>Please select</option>
-                <?php
+            <div class="seat-row">
+                <label for="Standard-Adult">Standard Adult:</label>
+                <select name="seats[STA]" id="Standard-Adult">
+                    <option value="" disabled selected>Please select</option>
+                    <?php
                     for ($i = 0; $i <= 10; $i++) {
                         echo "<option value='$i'>$i</option>";
                     }
-                ?>
-            </select>
+                    ?>
+                </select>
+            </div>
 
-            <label for = "Standard Concession">Standard Concession:</label>
-            <select name="seats[STP]" name="Standard Concession">
-                <option value="" disabled selected>Please select</option>
-                <?php
+            <div class="seat-row">
+                <label for="Standard-Concession">Standard Concession:</label>
+                <select name="seats[STP]" id="Standard-Concession">
+                    <option value="" disabled selected>Please select</option>
+                    <?php
                     for ($i = 0; $i <= 10; $i++) {
                         echo "<option value='$i'>$i</option>";
                     }
-                ?>
-            </select>
+                    ?>
+                </select>
+            </div>
 
-            <label for = "Standard Child">Standard Child:</label>
-            <select name="seats[STC]" name="Standard Child">
-                <option value="" disabled selected>Please select</option>
-                <?php
+            <div class="seat-row">
+                <label for="Standard-Child">Standard Child:</label>
+                <select name="seats[STC]" id="Standard-Child">
+                    <option value="" disabled selected>Please select</option>
+                    <?php
                     for ($i = 0; $i <= 10; $i++) {
                         echo "<option value='$i'>$i</option>";
                     }
-                ?>
-            </select>
-
+                    ?>
+                </select>
+            </div>
         </fieldset>
+
+
          <!--total price display, updates as changes are made-->
         <div id="total-price">
             <span id="total-price-display">Total Price: $0.00</span>

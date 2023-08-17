@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         //when movie code is not found or is invalid, reidirect to index
         if (!movieMatched) {
-            window.location.href = "index.php";
+            //window.location.href = "index.php";
         }
     }
 });
