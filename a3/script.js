@@ -114,16 +114,19 @@ document.addEventListener("DOMContentLoaded", function() {
     var radioButtons = document.getElementsByName("movie");
     var movieMatched = false;
 
-    for (var i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].value === selectedMovie) {
-            radioButtons[i].checked = true;
-            fetchMovieDetails(selectedMovie);
-            movieMatched = true;
-            break;
+    if (window.location.pathname.endsWith("booking.php"))
+    {
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].value === selectedMovie) {
+                radioButtons[i].checked = true;
+                fetchMovieDetails(selectedMovie);
+                movieMatched = true;
+                break;
+            }
         }
-    }
-    if (!movieMatched) {
-        window.location.href = "index.php";
+        if (!movieMatched) {
+            window.location.href = "index.php";
+        }
     }
 });
 
