@@ -239,13 +239,11 @@ document.addEventListener("DOMContentLoaded", function() {
     rememberMeCheckbox.addEventListener('change', function() {
         if (this.checked) {
             // Save customer details to localStorage
-            localStorage.setItem('rememberMe', 'true');
             localStorage.setItem('customerName', nameInput.value);
             localStorage.setItem('customerEmail', emailInput.value);
             localStorage.setItem('customerMobile', mobileInput.value);
         } else {
             // Remove customer details from localStorage
-            localStorage.removeItem('rememberMe');
             localStorage.removeItem('customerName');
             localStorage.removeItem('customerEmail');
             localStorage.removeItem('customerMobile');
