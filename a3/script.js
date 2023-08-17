@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     if (!movieMatched) {
-        alert("No movie match!");
+        window.location.href = "index.html";
     }
 });
 
