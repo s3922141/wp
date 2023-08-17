@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     if (!movieMatched) {
-        window.location.href = "index.html";
+        window.location.href = "index.php";
     }
 });
 
