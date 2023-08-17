@@ -1,6 +1,6 @@
 header {
   height: 100px;
-  background-color: #3c0008;
+  background-color: #300006;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -15,7 +15,7 @@ nav, nav a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: darkgoldenrod;
+  background-color: #936B09;
   color: black;
 }
 
@@ -28,6 +28,7 @@ body, html {
     height: fit-content;
     margin: 0;
     padding: 0;
+    color: white;
     background-color: black;
     text-align: center;
     font-family: "Helvetica", sans-serif;
@@ -38,7 +39,7 @@ body, html {
   }
 
   footer {
-    background-color: darkgoldenrod;
+    background-color: #936B09;
     color: black;
   }
   
@@ -51,7 +52,7 @@ body, html {
   
   h1, h2, h3, h4, h5, h6 {
     font-family: "Garamond", serif;
-    color: darkgoldenrod;
+    color: #936B09;
   }
 
   #About-Us {
@@ -132,9 +133,9 @@ body, html {
     justify-content: center;
     align-items: center;
     max-width: 500px;
-    background-color: #3c0008;
+    background-color: #300006;
     padding: 20px;
-    border: 15px ridge darkgoldenrod;
+    border: 15px ridge #936B09;
   }
 
   #Now-Showing img {
@@ -372,7 +373,7 @@ body, html {
 }
 
 #Book-Oppenheimer:hover {
-  background-color: darkgoldenrod;
+  background-color: #936B09;
 }
 
 #Book-Barbie {
@@ -387,7 +388,7 @@ body, html {
 }
 
 #Book-Barbie:hover {
-  background-color: darkgoldenrod;
+  background-color: #936B09;
 }
 
 #Book-IndianaJones {
@@ -402,7 +403,7 @@ body, html {
 }
 
 #Book-IndianaJones:hover {
-  background-color: darkgoldenrod;
+  background-color: #936B09;
 }
 
 #Book-TMNT {
@@ -417,7 +418,7 @@ body, html {
 }
 
 #Book-TMNT:hover {
-  background-color: darkgoldenrod;
+  background-color: #936B09;
 }
 
 h1 {
@@ -435,5 +436,25 @@ h2 {
 }
 
 #TableHeadings {
-  color: darkgoldenrod;
+  color: #936B09;
 }
+
+form {
+  max-width: 900px; 
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc; 
+  background-color: #3E4446; 
+}
+
+input[type="radio"] {
+  margin-right: 10px; 
+}
+
+label {
+  display: inline-block; 
+  vertical-align: middle; 
+}
+
+
+

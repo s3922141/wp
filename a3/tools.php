@@ -1,6 +1,6 @@
 <?php
   session_start();
-
+  //all movies with their details and array of sessions
   $moviesObject = [
     'ACT' => [
       'title' => 'Indiana Jones and the Dial of Destiny',

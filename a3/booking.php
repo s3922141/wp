@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lunardo Booking Page</title>
     
-    <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
     
@@ -15,6 +14,7 @@
 
     <header>
       <h1>Lunardo</h1>
+      <img src="../../media/LunardoLogo.png" alt="Lunardo Logo" id = "LunardoLogo">
     </header>
 
     <nav>
@@ -22,12 +22,10 @@
     </nav>
 
     <h2>Booking Page</h2>
-
+        <!--buttons for selecting a movie-->
     <form action="booking.php?movie=ACT" method="post">
-        <!-- Hidden Field for Movie Code -->
         <input type="hidden" name="movie" value="ACT">
 
-        <!-- Radio Buttons for movie -->
         <fieldset>
             <legend>Pick a movie!</legend>
             <label class="movie-label">
@@ -49,17 +47,17 @@
         </fieldset>
 
         <input type="hidden" name="selected-screening" id="selected-screening">
-
+         <!--displays the details of a selected movie-->
         <div id="movie-details"></div>
         <div id="screenings-details"></div>
 
-
+         <!--based on selected movie displays screening times-->
         <fieldset>
             <legend>Select a screening time!</legend>
             <div id="screening-time-radio-buttons"></div>
         </fieldset>
 
-        <!-- Dropdowns for Seat Types -->
+         <!--dropdowns for each seat type-->
         <fieldset>
             <legend>Select Seat Types</legend>
 
@@ -124,13 +122,12 @@
             </select>
 
         </fieldset>
-
+         <!--total price display, updates as changes are made-->
         <div id="total-price">
             <span id="total-price-display">Total Price: $0.00</span>
         </div>
 
-
-        <!-- Text-based Fields -->
+         <!--customer information entry, patterns for validation-->
        <fieldset>
             <legend>Customer Details</legend>
             <label>Full Name: <input type="text" name="customer[name]" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'\-]+" required></label><br>
@@ -154,6 +151,7 @@
             echo "</pre>";
         }
     ?>
+
     <footer>
       <div>| Lunardo@emailplace.com.au | 035967876 | 23 Main street, Springfield |</div>
       <div>&copy;<script>

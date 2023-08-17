@@ -1,4 +1,3 @@
-alert("JavaScript is working!");
 
 const movieDetailsDiv = document.getElementById('movie-details');
 
@@ -53,6 +52,7 @@ function updateNowShowingLink() {
     }
 }
 
+//grabs movie details from tools.php by using movieCode
 function fetchMovieDetails(movieCode) {
     const url = `tools.php?movie=${movieCode}`;
 
@@ -92,8 +92,6 @@ function fetchMovieDetails(movieCode) {
             console.error('Error fetching movie details:', error);
             movieDetailsDiv.innerHTML = '<p>An error occurred while fetching movie details.</p>';
         });
-
-        const screeningTimeRadios = document.querySelectorAll('input[name="screening-time"]');
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -112,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var radioButtons = document.getElementsByName("movie");
     var movieMatched = false;
 
+    //only run on booking.php
     if (window.location.pathname.endsWith("booking.php"))
     {
         for (var i = 0; i < radioButtons.length; i++) {
@@ -122,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 break;
             }
         }
+        //when movie code is not found or is invalid, reidirect to index
         if (!movieMatched) {
             window.location.href = "index.php";
         }
@@ -130,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const movieRadios = document.querySelectorAll('input[name="movie"]');
-    const movieDetailsDiv = document.getElementById('movie-details');
 
     movieRadios.forEach(radio => {
         radio.addEventListener('change', function() {
@@ -161,8 +160,7 @@ const prices = {
     }
 };
 
-// ... Your existing JavaScript code ...
-// Helper function to get the selected screening rate
+//finds if selected movie session is discount or regular
 function getSelectedScreeningRate() {
     const selectedScreening = document.querySelector('input[name="screening-time"]:checked');
     if (selectedScreening) {
@@ -176,48 +174,43 @@ function getSelectedScreeningRate() {
     return 'regular';
 }
 
-
+//updates the total price of all selected seats
 function updateTotalPrice() {
     const totalPriceDisplay = document.getElementById('total-price-display');
     const seatSelects = document.querySelectorAll('select[name^="seats"]');
     const selectedScreeningRate = getSelectedScreeningRate();
     let totalPrice = 0;
 
+    //assumes rate is regular unless discount is proven
     seatSelects.forEach(seat => {
         const seatType = seat.name.split('[')[1].split(']')[0];
         if (selectedScreeningRate === "discount") {
-            const seatPrice = prices.discount[seatType]; // You can adjust this based on your pricing data
+            const seatPrice = prices.discount[seatType]; 
             totalPrice += seat.value * seatPrice;
         } else {
-            const seatPrice = prices.regular[seatType]; // You can adjust this based on your pricing data
+            const seatPrice = prices.regular[seatType]; 
             totalPrice += seat.value * seatPrice;
         }
     });
 
     totalPriceDisplay.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
 }
-
+//adds listeners to each seat dropdown and entire screening time fieldset
 document.addEventListener("DOMContentLoaded", function() {
     const seatSelects = document.querySelectorAll('select[name^="seats"]');
-    const screeningTimeRadios = document.querySelectorAll('input[name="screening-time"]');
 
-    // Add change event listeners to seat selection elements
     seatSelects.forEach(seat => {
         seat.addEventListener('change', updateTotalPrice);
     });
 
-    // Find the fieldset containing the screening time radio buttons
     const screeningTimeFieldset = document.querySelector('#screening-time-radio-buttons');
 
-    // Add change event listener using event delegation
     screeningTimeFieldset.addEventListener('change', function(event) {
         if (event.target.name === 'screening-time') {
             updateTotalPrice();
         }
     });
 
-
-    // Call updateTotalPrice once on initial load
     updateTotalPrice();
 });
 
@@ -229,6 +222,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load saved customer details from localStorage if "Remember Me" was checked
     if (localStorage.getItem('rememberMe') === 'true') {
+        rememberMeCheckbox.checked = true;
         nameInput.value = localStorage.getItem('customerName');
         emailInput.value = localStorage.getItem('customerEmail');
         mobileInput.value = localStorage.getItem('customerMobile');
@@ -238,11 +232,13 @@ document.addEventListener("DOMContentLoaded", function() {
     rememberMeCheckbox.addEventListener('change', function() {
         if (this.checked) {
             // Save customer details to localStorage
+            localStorage.setItem('rememberMe', 'true');
             localStorage.setItem('customerName', nameInput.value);
             localStorage.setItem('customerEmail', emailInput.value);
             localStorage.setItem('customerMobile', mobileInput.value);
         } else {
             // Remove customer details from localStorage
+            localStorage.removeItem('rememberMe');
             localStorage.removeItem('customerName');
             localStorage.removeItem('customerEmail');
             localStorage.removeItem('customerMobile');
