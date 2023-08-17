@@ -229,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load saved customer details from localStorage if "Remember Me" was checked
     if (localStorage.getItem('rememberMe') === 'true') {
-        rememberMeCheckbox.checked = true;
         nameInput.value = localStorage.getItem('customerName');
         emailInput.value = localStorage.getItem('customerEmail');
         mobileInput.value = localStorage.getItem('customerMobile');
