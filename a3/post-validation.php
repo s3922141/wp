@@ -6,15 +6,23 @@
 */
 function validateBooking() {
   $errors = []; // new empty array to return multiple error messages
-  $username = trim($_POST['user']['name']);
+  $username = trim($_POST['customer']['name']);
   if ( $username == '') {
-    $errors['user']['name'] = "Name can't be blank";
+    $errors['honest']['name'] = "Name can't be blank";
   } else {
     // more advanced name checks here with better error message
   }
-  $email = trim($_POST['user']['email']);
+  $email = trim($_POST['customer']['email']);
   if ($email == '') {
-    $errors['user']['email'] = "Email can't be blank";
+    $errors['honest']['email'] = "Email can't be blank";
+  } else {
+    // more advanced email checks here with better error message
+  }
+  
+  //is movie code not one of the valid options
+  $movie = trim($_POST['movie']);
+  if ($movie != 'ACT' && $movie != 'RMC' && $movie != 'ANM' && $movie != 'DRM') {
+    $errors['dishonest']['movie'] = "Invalid or missing movie code";
   } else {
     // more advanced email checks here with better error message
   }

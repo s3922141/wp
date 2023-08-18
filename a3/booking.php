@@ -1,3 +1,28 @@
+<?php
+
+include 'post-validation.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $errors = [];
+    $postErrors = validateBooking();
+
+    if (!empty($errors['dishonest'])) {
+        //there are dishonest errors, go to index
+        header("Location: index.php");
+        exit;  
+    } 
+    else if (!empty($errors)) {
+        //there are honest errors
+        //adress them
+    }
+    else {
+        // There are no errors, go to receipt
+        header("Location: receipt.php");
+        exit;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang='en'>
   <head>
@@ -187,6 +212,8 @@ SESSION Contains:
     </aside>
 
   </body>
+
+
 
   <script src='script.js'></script>
 </html>
