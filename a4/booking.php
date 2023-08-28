@@ -103,13 +103,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $priceSTC = $numberSTC * 17.50;
             }
             else {
-                $priceSTA = $numberSTC * 13;
+                $priceSTC = $numberSTC * 13;
             }
         }
         
         $total = $priceFCA + $priceFCP + $priceFCC + $priceSTA + $priceSTP + $priceSTC;
         $gst = $total / 11;
-        $total = number_format($gst, 2);
+        $total = number_format($total, 2);
         $gst = number_format($gst, 2);
         
 
