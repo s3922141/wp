@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     else {
         // There are no errors, go to receipt
-        header("Location: receipt.php");
+        header("Location: reciept.php");
         exit;
     }
 }
