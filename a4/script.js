@@ -71,7 +71,7 @@ function fetchMovieDetails(movieCode) {
                     const screening = screenings[day];
                     screeningTimeRadios += `
                         <label>
-                            <input type="radio" name="screening-time" value="${day}">
+                            <input type="radio" name="screening-time" value="${day}: ${screening.time}: ${screening.rate}">
                             ${day}: ${screening.time} (${screening.rate})
                         </label><br>`;
                 }
