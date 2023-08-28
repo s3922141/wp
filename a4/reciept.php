@@ -5,9 +5,10 @@ session_start();
 if (isset($_SESSION['booking_data'])) {
     $data = $_SESSION['booking_data'];
     print_r($data);
+    echo "Booking data is available.";
 
 } else {
-    // Handle the case where data is not available
+    echo "No booking data available.";
 }
 ?>
 
