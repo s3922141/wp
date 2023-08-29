@@ -1,3 +1,4 @@
 Order Date,Name,Email,Mobile,Movie Code,Day of Movie,Time of Movie,# FCA,$ FCA,# FCP,$ FCP,# FCC,$ FCC,# STA,$ STA,# STP,$ STP,# STC,$ STC,Total,GST
 "2023-08-28 19:12:02","Benjmain Finn",benjamin.joseph.f@gmail.com,0478572644,RMC,SAT,3pm,0,0,2,56,0,0,3,0,0,0,0,,56,5.09
 "2023-08-28 19:15:27","Benjmain Finn",benjamin.joseph.f@gmail.com,0478572644,RMC,FRI,12pm,3,75,0,0,0,0,0,0,0,0,4,70,145,13.18
+"2023-08-29 13:18:15","Benjmain Finn",benjamin.joseph.f@gmail.com,0478572644,RMC,SAT,3pm,0,0,4,112,0,0,0,0,0,0,0,0,112.00,10.18

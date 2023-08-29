@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $_SESSION['form_data'] = array(
+      'email' => $_POST['email'],
+      'phone' => $_POST['phone']
+  );
+  header("Location: currentbookings.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang='en'>
   <head>
@@ -234,6 +247,22 @@
     </main>
 
     <footer>
+    <fieldset>
+    <legend>Existing bookings</legend>
+
+    <form method="post" action="">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <br>
+        <button type="submit" name="submit_existing_booking">Submit Existing Booking</button>
+    </form>
+
+</fieldset>
+
+
       <div>| Lunardo@emailplace.com.au | 035967876 | 23 Main street, Springfield |</div>
       <div>&copy;<script>
         document.write(new Date().getFullYear());

@@ -4,127 +4,141 @@ session_start();
 include 'post-validation.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = [];
-    $postErrors = validateBooking();
-
-    if (!empty($errors['dishonest'])) {
-        //there are dishonest errors, go to index
-        header("Location: index.php");
-        exit;  
-    } 
-    else if (!empty($errors)) {
-        //there are honest errors
-        //adress them
+    if (isset($_POST['submit_existing_booking'])) {
+        $_SESSION['form_data'] = array(
+            'email' => $_POST['email'],
+            'phone' => $_POST['phone']
+        );
+        header("Location: currentbookings.php");
+        exit();
     }
-    else {
-        // There are no errors,add booking then go to receipt
+  }
 
-        // Get all info relevant to booking
-        $orderDate = date('Y-m-d H:i:s');
-        $name = trim($_POST['customer']['name']);
-        $email = trim($_POST['customer']['email']);
-        $mobile = trim($_POST['customer']['mobile']);
-        $movieCode = trim($_POST['movie']);
-    
-        $screeningDetails = trim($_POST['screening-time']);
-        $selectedValues = explode(':', $screeningDetails);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['submit_booking'])) {
+        $errors = [];
+        $postErrors = validateBooking();
 
-        $dayOfMovie = $selectedValues[0];
-        $timeOfMovie = trim($selectedValues[1]);
-        $rateOfMovie = trim($selectedValues[2]);
-
-        //set values to 0 by default, will be updated if field is set
-        $numberFCA = 0;
-        $priceFCA = 0.00;
-        $numberFCP = 0;
-        $priceFCP = 0.00;
-        $numberFCC = 0;
-        $priceFCC = 0.00;
-        $numberSTA = 0;
-        $priceSTA = 0.00;
-        $numberSTP = 0;
-        $priceSTP = 0.00;
-        $numberSTC = 0;
-        $priceSTC = 0.00;
-
-        if (isset($_POST['seats']['FCA'])) {
-            $numberFCA = trim($_POST['seats']['FCA']);
-            if ($rateOfMovie == 'discount') {
-                $priceFCA = $numberFCA * 25.00;
-            }
-            else {
-                $priceFCA = $numberFCA * 31.00;
-            }
+        if (!empty($errors['dishonest'])) {
+            //there are dishonest errors, go to index
+            header("Location: index.php");
+            exit;  
         } 
-
-        if (isset($_POST['seats']['FCP'])) {
-            $numberFCP = trim($_POST['seats']['FCP']);
-            if ($rateOfMovie == 'discount') {
-                $priceFCP = $numberFCP * 23.50;
-            }
-            else {
-                $priceFCP = $numberFCP * 28.00;
-            }
-        } 
-
-        if (isset($_POST['seats']['FCC'])) {
-            $numberFCC = trim($_POST['seats']['FCC']);
-            if ($rateOfMovie == 'discount') {
-                $priceFCC = $numberFCC * 22.00;
-            }
-            else {
-                $priceFCC = $numberFCC * 25.00;
-            }
+        else if (!empty($errors)) {
+            //there are honest errors
+            //adress them
         }
+        else {
+            // There are no errors,add booking then go to receipt
 
-        if (isset($_POST['seats']['STA'])) {
-            $numberSTA = trim($_POST['seats']['STA']);
-            if ($rateOfMovie == 'discount') {
-                $priceSTA = $numberSTA * 16.00;
-            }
-            else {
-                $priceSTA = $numberSTA * 21.50;
-            }
-        }
-
-        if (isset($_POST['seats']['STP'])) {
-            $numberSTP = trim($_POST['seats']['STP']);
-            if ($rateOfMovie == 'discount') {
-                $priceSTP = $numberSTP * 14.50;
-            }
-            else {
-                $priceSTP = $numberSTP * 19.00;
-            }
-        }
-
-        if (isset($_POST['seats']['STC'])) {
-            $numberSTC = trim($_POST['seats']['STC']);
-            if ($rateOfMovie == 'discount') {
-                $priceSTC = $numberSTC * 17.50;
-            }
-            else {
-                $priceSTC = $numberSTC * 13;
-            }
-        }
+            // Get all info relevant to booking
+            $orderDate = date('Y-m-d H:i:s');
+            $name = trim($_POST['customer']['name']);
+            $email = trim($_POST['customer']['email']);
+            $mobile = trim($_POST['customer']['mobile']);
+            $movieCode = trim($_POST['movie']);
         
-        $total = $priceFCA + $priceFCP + $priceFCC + $priceSTA + $priceSTP + $priceSTC;
-        $gst = $total / 11;
-        $total = number_format($total, 2);
-        $gst = number_format($gst, 2);
+            $screeningDetails = trim($_POST['screening-time']);
+            $selectedValues = explode(':', $screeningDetails);
+
+            $dayOfMovie = $selectedValues[0];
+            $timeOfMovie = trim($selectedValues[1]);
+            $rateOfMovie = trim($selectedValues[2]);
+
+            //set values to 0 by default, will be updated if field is set
+            $numberFCA = 0;
+            $priceFCA = 0.00;
+            $numberFCP = 0;
+            $priceFCP = 0.00;
+            $numberFCC = 0;
+            $priceFCC = 0.00;
+            $numberSTA = 0;
+            $priceSTA = 0.00;
+            $numberSTP = 0;
+            $priceSTP = 0.00;
+            $numberSTC = 0;
+            $priceSTC = 0.00;
+
+            if (isset($_POST['seats']['FCA'])) {
+                $numberFCA = trim($_POST['seats']['FCA']);
+                if ($rateOfMovie == 'discount') {
+                    $priceFCA = $numberFCA * 25.00;
+                }
+                else {
+                    $priceFCA = $numberFCA * 31.00;
+                }
+            } 
+
+            if (isset($_POST['seats']['FCP'])) {
+                $numberFCP = trim($_POST['seats']['FCP']);
+                if ($rateOfMovie == 'discount') {
+                    $priceFCP = $numberFCP * 23.50;
+                }
+                else {
+                    $priceFCP = $numberFCP * 28.00;
+                }
+            } 
+
+            if (isset($_POST['seats']['FCC'])) {
+                $numberFCC = trim($_POST['seats']['FCC']);
+                if ($rateOfMovie == 'discount') {
+                    $priceFCC = $numberFCC * 22.00;
+                }
+                else {
+                    $priceFCC = $numberFCC * 25.00;
+                }
+            }
+
+            if (isset($_POST['seats']['STA'])) {
+                $numberSTA = trim($_POST['seats']['STA']);
+                if ($rateOfMovie == 'discount') {
+                    $priceSTA = $numberSTA * 16.00;
+                }
+                else {
+                    $priceSTA = $numberSTA * 21.50;
+                }
+            }
+
+            if (isset($_POST['seats']['STP'])) {
+                $numberSTP = trim($_POST['seats']['STP']);
+                if ($rateOfMovie == 'discount') {
+                    $priceSTP = $numberSTP * 14.50;
+                }
+                else {
+                    $priceSTP = $numberSTP * 19.00;
+                }
+            }
+
+            if (isset($_POST['seats']['STC'])) {
+                $numberSTC = trim($_POST['seats']['STC']);
+                if ($rateOfMovie == 'discount') {
+                    $priceSTC = $numberSTC * 17.50;
+                }
+                else {
+                    $priceSTC = $numberSTC * 13;
+                }
+            }
         
+        
+            $total = $priceFCA + $priceFCP + $priceFCC + $priceSTA + $priceSTP + $priceSTC;
+            $gst = $total / 11;
+            $total = number_format($total, 2);
+            $gst = number_format($gst, 2);
+            
 
-        $data = array($orderDate, $name, $email, $mobile, $movieCode, $dayOfMovie, $timeOfMovie, $numberFCA, $priceFCA, $numberFCP, $priceFCP, $numberFCC, $priceFCC, $numberSTA, $priceSTA, $numberSTP, $priceSTP, $numberSTC, $priceSTC, $total, $gst);
-        // Open the file for writing in append mode
-        $file = fopen('bookings.txt', 'a');
-        // Write the data to the file in CSV format
-        fputcsv($file, $data);
-        // Close the file
-        fclose($file);
+            $data = array($orderDate, $name, $email, $mobile, $movieCode, $dayOfMovie, $timeOfMovie, $numberFCA, $priceFCA, $numberFCP, $priceFCP, $numberFCC, $priceFCC, $numberSTA, $priceSTA, $numberSTP, $priceSTP, $numberSTC, $priceSTC, $total, $gst);
+            // Open the file for writing in append mode
+            $file = fopen('bookings.txt', 'a');
+            // Write the data to the file in CSV format
+            fputcsv($file, $data);
+            // Close the file
+            fclose($file);
 
-        $_SESSION['booking_data'] = $data;
+            $_SESSION['booking_data'] = $data;
 
-        header("Location: reciept.php");
-        exit;
+            header("Location: reciept.php");
+            exit;
+        }
     }
 }
 ?>
@@ -284,7 +298,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         </fieldset>
 
-        <button type="submit">Submit Booking</button>
+        <button type="submit" name="submit_booking">Submit Booking</button>
     </form>
 
     <?php
@@ -297,6 +311,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ?>
 
     <footer>
+    <fieldset>
+    <legend>Existing bookings</legend>
+
+    <form method="post" action="">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <br>
+        <button type="submit" name="submit_existing_booking">Submit Existing Booking</button>
+    </form>
+    
+</fieldset>
+
       <div>| Lunardo@emailplace.com.au | 035967876 | 23 Main street, Springfield |</div>
       <div>&copy;<script>
         document.write(new Date().getFullYear());
