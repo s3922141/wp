@@ -1,12 +1,14 @@
 <?php
 session_start();
 
-if (isset($_SESSION['booking_data'])) {
-    $data = $_SESSION['booking_data'];
-} elseif (isset($_POST['booking_data'])) {
+if (isset($_POST['booking_data'])) {
     $line = $_POST['booking_data'];
     $data = explode(",", $line);
-} else {
+}
+elseif (isset($_SESSION['booking_data'])) {
+    $data = $_SESSION['booking_data'];
+} 
+else {
     echo "No booking data available.";
 }
 
