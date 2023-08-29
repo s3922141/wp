@@ -1,1 +1,467 @@
-/* This stylesheet is for your tested CSS, styles here will be deactivated when toggling wireframe style */
+header {
+  height: 100px;
+  background-color: #300006;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  }
+
+nav, nav a {
+  height: 20px;
+  min-width: calc(100vw - 20px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #936B09;
+  color: black;
+}
+
+nav a.active {
+  color: whitesmoke;
+  transition: 0.3s;
+}
+
+body, html {
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+
+  form {
+    color: whitesmoke;
+  }
+
+  footer {
+    background-color: #936B09;
+    color: black;
+  }
+  
+  section {
+    padding-top: 20px;
+    margin-top: 100px;
+    min-height: calc(100vh - 20px);
+    color: white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Garamond", serif;
+    color: #936B09;
+  }
+
+  #About-Us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #Seats-and-Prices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #First-Class-Seats {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  @media (max-width: 700px) {
+    #First-Class-Seats {
+      flex-direction: column;
+    }
+  }
+
+  #Profern-Verona-Twin {
+    max-width: 650px;
+    max-width: 80vw;
+    max-height: 80vh;
+    max-height: 650px;
+    object-fit: contain;
+  }
+
+  #First-Class-Prices {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+  }
+
+  #Standard-Seats {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  @media (max-width: 700px) {
+    #Standard-Seats {
+      flex-direction: column;
+    }
+  }
+
+  #Profern-Standard-Twin {
+    max-width: 650px;
+    max-width: 80vw;
+    max-height: 80vh;
+    max-height: 650px;
+    object-fit: contain;
+  }
+
+  #First-Standard-Prices {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+  }
+
+  #Discounted-Seats {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    background-color: #300006;
+    padding: 20px;
+    border: 15px ridge #936B09;
+  }
+
+  #Now-Showing img {
+    max-height: 80vh;
+    object-fit: contain;
+  }
+
+  #Movies1and2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (max-width: 1000px) {
+    #Movies1and2 {
+      flex-direction: column;
+    }
+  }
+
+  #Movies3and4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (max-width: 1000px) {
+    #Movies3and4 {
+      flex-direction: column;
+    }
+  }
+
+  #Allmovies {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+.flip-box-movie1 {
+  background-color: black;
+  max-height: 80vh;
+  max-width: calc((2 / 3) *80vh);
+  position: relative;
+  margin: 0 auto;
+}
+
+.flip-box-inner-movie1 {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  text-align: center;
+  transition: transform 1.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-movie1:not(:focus) .flip-box-inner-movie1 {
+  transform: rotateY(180deg);
+}
+
+.movie1front, .movie1back {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.movie1front {
+  background-color: #bbb;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 2;
+}
+
+.movie1back {
+  background-color: rgb(48, 48, 48);
+  color: white;
+  transform: rotateY(180deg);
+  transform: translateY(-100%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+} 
+
+.flip-box-movie2 {
+  background-color: black;
+  max-height: 80vh;
+  max-width: calc((2 / 3) *80vh);
+  position: relative;
+  margin: 0 auto;
+}
+
+.flip-box-inner-movie2 {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  text-align: center;
+  transition: transform 1.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-movie2:not(:focus) .flip-box-inner-movie2 {
+  transform: rotateY(180deg);
+}
+
+.movie2front, .movie2back {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.movie2front {
+  background-color: #bbb;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 2;
+}
+
+.movie2back {
+  background-color: rgb(48, 48, 48);
+  color: white;
+  transform: rotateY(180deg);
+  transform: translateY(-100%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+} 
+
+.flip-box-movie3 {
+  background-color: black;
+  max-height: 80vh;
+  max-width: calc((2 / 3) *80vh);
+  position: relative;
+  margin: 0 auto;
+}
+
+.flip-box-inner-movie3 {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  text-align: center;
+  transition: transform 1.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-movie3:not(:focus) .flip-box-inner-movie3 {
+  transform: rotateY(180deg);
+}
+
+.movie3front, .movie3back {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.movie3front {
+  background-color: #bbb;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 2;
+}
+
+.movie3back {
+  background-color: rgb(48, 48, 48);
+  color: white;
+  transform: rotateY(180deg);
+  transform: translateY(-100%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+} 
+
+.flip-box-movie4 {
+  background-color: black;
+  max-height: 80vh;
+  max-width: calc((2 / 3) *80vh);
+  position: relative;
+  margin: 0 auto;
+}
+
+.flip-box-inner-movie4 {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  text-align: center;
+  transition: transform 1.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-movie4:not(:focus) .flip-box-inner-movie4 {
+  transform: rotateY(180deg);
+}
+
+.movie4front, .movie4back {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.movie4front {
+  background-color: #bbb;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 2;
+}
+
+.movie4back {
+  background-color: rgb(48, 48, 48);
+  color: white;
+  transform: rotateY(180deg);
+  transform: translateY(-100%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+} 
+
+#Book-Oppenheimer {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: darkred;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#Book-Oppenheimer:hover {
+  background-color: #936B09;
+}
+
+#Book-Barbie {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: darkred;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#Book-Barbie:hover {
+  background-color: #936B09;
+}
+
+#Book-IndianaJones {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: darkred;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#Book-IndianaJones:hover {
+  background-color: #936B09;
+}
+
+#Book-TMNT {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: darkred;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#Book-TMNT:hover {
+  background-color: #936B09;
+}
+
+h1 {
+  font-size: 350%;
+  padding-top: 50px;
+  margin-top: 0;
+}
+
+#LunardoLogo {
+  height: 100%;
+}
+
+h2 {
+  font-size: 250%;
+}
+
+#TableHeadings {
+  color: #936B09;
+}
+
+form {
+  max-width: 900px; 
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc; 
+  background-color: #3E4446; 
+}
+
+input[type="radio"] {
+  margin-right: 10px; 
+}
+
+label {
+  display: inline-block; 
+  vertical-align: middle; 
+}
+
+.custom-fieldset {
+  border: 2px solid #ccc;
+  padding: 10px;
+}
+
+.custom-fieldset label,
+.custom-fieldset select {
+  display: inline-block;
+}
