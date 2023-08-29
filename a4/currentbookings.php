@@ -6,6 +6,9 @@ if (isset($_SESSION['form_data'])) {
     $data = $_SESSION['form_data'];
     
     // Read and process the bookings.txt file
+    $checkEmail = $data['email'];
+    $checkPhone = $data['phone'];
+
     $file = fopen("bookings.txt", "r");
     if ($file) {
         while (($line = fgets($file)) !== false) {
@@ -13,7 +16,7 @@ if (isset($_SESSION['form_data'])) {
             $emailInFile = $bookingInfo[2]; 
             $phoneInFile = $bookingInfo[3]; 
             
-            if ($emailInFile === $data['email'] && $phoneInFile === $data['phone']) {
+            if ($emailInFile === $checkEmail && $phoneInFile === $checkPhone) {
                 echo "Order Date: " . $bookingInfo[0] . "<br>";
                 echo "Name: " . $bookingInfo[1] . "<br>";
                 echo "Email: " . $emailInFile . "<br>";
