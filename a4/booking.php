@@ -121,10 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         
             $total = $priceFCA + $priceFCP + $priceFCC + $priceSTA + $priceSTP + $priceSTC;
-            $gst = $total / 11;
-            $total = number_format($total, 2);
-            $gst = number_format($gst, 2);
-            
+            $gst = $total / 11;         
 
             $data = array($orderDate, $name, $email, $mobile, $movieCode, $dayOfMovie, $timeOfMovie, $numberFCA, $priceFCA, $numberFCP, $priceFCP, $numberFCC, $priceFCC, $numberSTA, $priceSTA, $numberSTP, $priceSTP, $numberSTC, $priceSTC, $total, $gst);
             // Open the file for writing in append mode

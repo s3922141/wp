@@ -4,57 +4,39 @@ session_start();
 if (isset($_POST['booking_data'])) {
     $line = $_POST['booking_data'];
     $data = explode(",", $line);
-
-    $orderDate = $data[0];
-    $name = $data[1];
-    $email = $data[2];
-    $mobile = $data[3];
-    $movieCode = $data[4];
-    $dayOfMovie = $data[5];
-    $timeOfMovie = $data[6];
-    $numberFCA = $data[7];
-    $priceFCA = $data[8];
-    $numberFCP = $data[9];
-    $priceFCP = $data[10];
-    $numberFCC = $data[11];
-    $priceFCC = $data[12];
-    $numberSTA = $data[13];
-    $priceSTA = $data[14];
-    $numberSTP = $data[15];
-    $priceSTP = $data[16];
-    $numberSTC = $data[17];
-    $priceSTC = $data[18];
-    $total = $data[20]; //needs to be incremented up one for some unknown reason
-    $gst = $data[20];
 }
 elseif (isset($_SESSION['booking_data'])) {
     $data = $_SESSION['booking_data'];
-    $orderDate = $data[0];
-    $name = $data[1];
-    $email = $data[2];
-    $mobile = $data[3];
-    $movieCode = $data[4];
-    $dayOfMovie = $data[5];
-    $timeOfMovie = $data[6];
-    $numberFCA = $data[7];
-    $priceFCA = $data[8];
-    $numberFCP = $data[9];
-    $priceFCP = $data[10];
-    $numberFCC = $data[11];
-    $priceFCC = $data[12];
-    $numberSTA = $data[13];
-    $priceSTA = $data[14];
-    $numberSTP = $data[15];
-    $priceSTP = $data[16];
-    $numberSTC = $data[17];
-    $priceSTC = $data[18];
-    $total = $data[19];
-    $gst = $data[20];
 } 
 else {
     echo "No booking data available.";
+    exit;
 }
+
+$orderDate = $data[0];
+$name = $data[1];
+$email = $data[2];
+$mobile = $data[3];
+$movieCode = $data[4];
+$dayOfMovie = $data[5];
+$timeOfMovie = $data[6];
+$numberFCA = $data[7];
+$priceFCA = $data[8];
+$numberFCP = $data[9];
+$priceFCP = $data[10];
+$numberFCC = $data[11];
+$priceFCC = $data[12];
+$numberSTA = $data[13];
+$priceSTA = $data[14];
+$numberSTP = $data[15];
+$priceSTP = $data[16];
+$numberSTC = $data[17];
+$priceSTC = $data[18];
+$total = $data[19];
+$gst = $data[20];
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang='en'>
