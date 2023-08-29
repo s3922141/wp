@@ -24,10 +24,10 @@ if (isset($_SESSION['form_data'])) {
                 
                 // convert the line into an array then store the booking data in the session
                 $data = explode(",", $line);
-                $_SESSION['booking_data'] = $data;
 
                 // Add a button to view receipt
                 echo "<form action='reciept.php' method='post'>";
+                echo "<input type='hidden' name='booking_id' value='$data'>";
                 echo "<input type='submit' value='View Receipt'>";
                 echo "</form>";
 

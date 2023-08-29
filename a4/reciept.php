@@ -1,9 +1,16 @@
 <?php
 session_start();
 
-// Retrieve the stored data from the session
 if (isset($_SESSION['booking_data'])) {
     $data = $_SESSION['booking_data'];
+} elseif (isset($_POST['booking_data'])) {
+    $data = $_POST['booking_data'];
+} else {
+    echo "No booking data available.";
+}
+
+// Retrieve the stored data from the session
+if (isset($data)) {
 
     $orderDate = $data[0];
     $name = $data[1];
@@ -28,7 +35,7 @@ if (isset($_SESSION['booking_data'])) {
     $gst = $data[20];
 
 } else {
-    echo "No booking data available.";
+    echo "Booking data invalid.";
 }
 
 
