@@ -27,7 +27,7 @@ if (isset($_SESSION['form_data'])) {
 
                 // Add a button to view receipt
                 echo "<form action='reciept.php' method='post'>";
-                echo "<input type='hidden' name='booking_id' value='$data'>";
+                echo "<input type='hidden' name='booking_id' value='$line'>";
                 echo "<input type='submit' value='View Receipt'>";
                 echo "</form>";
 

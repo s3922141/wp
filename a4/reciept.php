@@ -4,7 +4,8 @@ session_start();
 if (isset($_SESSION['booking_data'])) {
     $data = $_SESSION['booking_data'];
 } elseif (isset($_POST['booking_data'])) {
-    $data = $_POST['booking_data'];
+    $line = $_POST['booking_data'];
+    $data = explode(",", $line);
 } else {
     echo "No booking data available.";
 }
