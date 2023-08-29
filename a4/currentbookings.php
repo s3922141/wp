@@ -4,9 +4,34 @@ session_start();
 // Retrieve the stored data from the session
 if (isset($_SESSION['form_data'])) {
     $data = $_SESSION['form_data'];
-    print_r($data);
-    echo "existing booking data found.";
-
+    
+    // Read and process the bookings.txt file
+    $file = fopen("bookings.txt", "r");
+    if ($file) {
+        while (($line = fgets($file)) !== false) {
+            $bookingInfo = str_getcsv($line);
+            $emailInFile = $bookingInfo[2]; 
+            $phoneInFile = $bookingInfo[3]; 
+            
+            if ($emailInFile === $data['email'] && $phoneInFile === $data['phone']) {
+                echo "Order Date: " . $bookingInfo[0] . "<br>";
+                echo "Name: " . $bookingInfo[1] . "<br>";
+                echo "Email: " . $emailInFile . "<br>";
+                echo "Mobile: " . $phoneInFile . "<br>";
+                
+                // Add a button to view receipt
+                echo "<form action='reciept.php' method='post'>";
+                echo "<input type='hidden' name='bookingData' value='" . htmlspecialchars($line) . "'>";
+                echo "<input type='submit' value='View Receipt'>";
+                echo "</form>";
+                
+                echo "<hr>";
+            }
+        }
+        fclose($file);
+    } else {
+        echo "Error reading the file.";
+    }
 } else {
     echo "No previous bookings found.";
 }
