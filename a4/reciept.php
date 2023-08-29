@@ -44,5 +44,6 @@ if (isset($_SESSION['booking_data'])) {
     <p>Name:<?=$name?></p>
     <p>Email:<?=$email?></p>
     <p>Mobile:<?=$mobile?></p>
+    <p>Total:<?=$total?></p>
 </body>
 </html>
