@@ -19,8 +19,9 @@ if (isset($_SESSION['form_data'])) {
                 echo "Email: " . $emailInFile . "<br>";
                 echo "Mobile: " . $phoneInFile . "<br>";
                 
-                // Store the booking data in the session
-                $_SESSION['booking_data'] = $line;
+                // convert the line into an array then store the booking data in the session
+                $data = explode(",", $line);
+                $_SESSION['booking_data'] = $data;
 
                 // Add a button to view receipt
                 echo "<form action='reciept.php' method='post'>";
