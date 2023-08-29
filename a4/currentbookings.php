@@ -19,11 +19,14 @@ if (isset($_SESSION['form_data'])) {
                 echo "Email: " . $emailInFile . "<br>";
                 echo "Mobile: " . $phoneInFile . "<br>";
                 
+                // Store the booking data in the session
+                $_SESSION['booking_data'] = $line;
+
                 // Add a button to view receipt
                 echo "<form action='reciept.php' method='post'>";
-                echo "<input type='hidden' name='bookingData' value='" . htmlspecialchars($line) . "'>";
                 echo "<input type='submit' value='View Receipt'>";
                 echo "</form>";
+
                 
                 echo "<hr>";
             }
