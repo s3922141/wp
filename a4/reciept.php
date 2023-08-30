@@ -9,7 +9,7 @@ elseif (isset($_SESSION['booking_data'])) {
     $data = $_SESSION['booking_data'];
 } 
 else {
-    echo "No booking data available.";
+    header("Location: index.php");
     exit;
 }
 
