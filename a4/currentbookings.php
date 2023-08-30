@@ -8,6 +8,10 @@ session_start();
     <title>Current Bookings</title>
     <h1>Current Bookings</h1>
 </header>
+<nav>
+    <a href="http://titan.csit.rmit.edu.au/~s3922141/wp/a4/index.php">Home</a>
+</nav>
+
 <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
 <body>
     <?php
@@ -22,6 +26,7 @@ session_start();
         // Read and process the bookings.txt file
         $checkEmail = $data['email'];
         $checkPhone = $data['phone'];
+        echo "<hr>";
     
         $file = fopen("bookings.txt", "r");
         if ($file) {
@@ -31,6 +36,7 @@ session_start();
                 $phoneInFile = $bookingInfo[3]; 
                 
                 if ($emailInFile === $checkEmail && $phoneInFile === $checkPhone) {
+                    echo "<form action='reciept.php' method='post'>";
                     echo "Order Date: " . $bookingInfo[0] . "<br>";
                     echo "Name: " . $bookingInfo[1] . "<br>";
                     echo "Email: " . $emailInFile . "<br>";
