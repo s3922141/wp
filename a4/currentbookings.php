@@ -43,12 +43,43 @@ include 'tools.php';
                     $movieTitle = $moviesObject[$movieCode]['title'];
 
                     echo "<form action='reciept.php' method='post'>";
-                    echo "Order Date: " . $bookingInfo[0] . "<br>";
+                    echo "Booking placed: " . $bookingInfo[0] . "<br>";
                     echo "Name: " . $bookingInfo[1] . "<br>";
-                    echo "Email: " . $emailInFile . "<br>";
-                    echo "Mobile: " . $phoneInFile . "<br>";
                     echo "Movie: " . $movieTitle . "<br>";
+                    echo "<br>";
+                    echo "Number of seats:". "<br>";
+
+                    //for each seat type, if not 0 display number of seats
+                    //first class adult
+                    if ($bookingInfo[7] != 0){
+                        echo "First class adult - " . $bookingInfo[7] . "<br>";
+                    }
+
+                    //first class concession
+                    if ($bookingInfo[9] != 0){
+                        echo "First class concession - " . $bookingInfo[9] . "<br>";
+                    }
+
+                    //first class child
+                    if ($bookingInfo[11] != 0){
+                        echo "First class child - " . $bookingInfo[11] . "<br>";
+                    }
                     
+                    //standard adult
+                    if ($bookingInfo[13] != 0){
+                        echo "Standard adult - " . $bookingInfo[13] . "<br>";
+                    }
+
+                    //standard concession
+                    if ($bookingInfo[15] != 0){
+                        echo "Standard concession - " . $bookingInfo[15] . "<br>";
+                    }
+
+                    //standard child
+                    if ($bookingInfo[17] != 0){
+                        echo "Standard child - " . $bookingInfo[17] . "<br>";
+                    }
+
                     // convert the line into an array then store the booking data in the session
                     $data = explode(",", $line);
     
