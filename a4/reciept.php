@@ -37,6 +37,7 @@ $numberSTC = $data[17];
 $priceSTC = number_format($data[18], 2);
 $total = number_format($data[19], 2);
 $gst = number_format($data[20], 2);
+$numberAdmit = $numberFCA + $numberFCC + $numberFCP + $numberSTA + $numberSTC + $numberSTP;
 
 $movieTitle = $moviesObject[$movieCode]['title'];
 ?>
@@ -68,6 +69,23 @@ $movieTitle = $moviesObject[$movieCode]['title'];
             justify-content: center;
             align-items: center;
          }
+         .ticket {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .ticket-info {
+            flex: 1;
+            min-width: 250px;
+        }
+        .qr-code {
+            margin-left: 20px;
+            flex: 1;
+        }
     </style>
 </head>
 
@@ -89,6 +107,20 @@ $movieTitle = $moviesObject[$movieCode]['title'];
         <p>Standard child seats: <?=$numberSTC?> Subtotal: $<?=$priceSTC?></p>
         <p>Total(including GST): $<?=$total?></p>
         <p>GST: $<?=$gst?></p>
+        <br>
+
+        <div class="ticket">
+            <div class="ticket-info">
+                <h2>Lunardo Ticket</h2>
+                <p><strong>Movie:</strong> <?php echo $movieTitle; ?></p>
+                <p><strong>Session:</strong> <?php echo $dayOfMovie;?> at <?php echo $timeOfMovie;?></p>
+                <p><strong>Name:</strong> <?php echo $name; ?></p>
+                <p><strong>Admits:</strong> <?php echo $numberAdmit; ?></p>
+            </div>
+        <div class="qr-code">
+            <img src="../../media/QR_code.png" alt="QR Code">
+        </div>
+    </div>
         <br>
     </main>
 
