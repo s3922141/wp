@@ -36,7 +36,7 @@ $priceSTP = number_format($data[16], 2);
 $numberSTC = $data[17];
 $priceSTC = number_format($data[18], 2);
 $totalRaw = $data[19];
-$total = number_format($total, 2);
+$total = number_format($totalRaw, 2);
 $gstRaw = $totalRaw/11;
 $gst = number_format($gstRaw, 2);
 
