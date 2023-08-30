@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+//include tools.php for access to movie details
+include 'tools.php';  
 ?>
 
 <!DOCTYPE html>
@@ -13,9 +16,9 @@ session_start();
 </nav>
 
 <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
-<body>
-    <?php
 
+<body>
+    <?php   
     //make a variable to track if any matches are found
     $matchFound = false;
     
@@ -34,13 +37,17 @@ session_start();
                 $bookingInfo = str_getcsv($line);
                 $emailInFile = $bookingInfo[2]; 
                 $phoneInFile = $bookingInfo[3]; 
-                
+                $movieCode = $bookingInfo[4];
+
                 if ($emailInFile === $checkEmail && $phoneInFile === $checkPhone) {
+                    $movieTitle = $moviesObject[$movieCode]['title'];
+
                     echo "<form action='reciept.php' method='post'>";
                     echo "Order Date: " . $bookingInfo[0] . "<br>";
                     echo "Name: " . $bookingInfo[1] . "<br>";
                     echo "Email: " . $emailInFile . "<br>";
                     echo "Mobile: " . $phoneInFile . "<br>";
+                    echo "Movie: " . $movieTitle . "<br>";
                     
                     // convert the line into an array then store the booking data in the session
                     $data = explode(",", $line);

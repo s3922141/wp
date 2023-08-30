@@ -1,5 +1,8 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
   session_start();
+}
+
   //all movies with their details and array of sessions
   $moviesObject = [
     'ACT' => [
@@ -140,15 +143,9 @@
     ],
   ];
 
-// Set the response header to indicate JSON content
-header('Content-Type: application/json');
-
 // Check if the 'movie' parameter is set and corresponds to a valid movie
 if (isset($_GET['movie']) && array_key_exists($_GET['movie'], $moviesObject)) {
     $selectedMovie = $moviesObject[$_GET['movie']];
     echo json_encode($selectedMovie);
-} else {
-    // If movie is not valid or not provided, return an error response
-    echo json_encode(['error' => 'Invalid movie selection']);
 }
 ?>
