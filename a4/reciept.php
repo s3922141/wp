@@ -80,7 +80,7 @@ $movieTitle = $moviesObject[$movieCode]['title'];
         }
         .ticket-info {
             flex: 1;
-            min-width: 250px;
+            width: 200px;
         }
         .qr-code {
             margin-left: 20px;
@@ -118,7 +118,7 @@ $movieTitle = $moviesObject[$movieCode]['title'];
                 <p><strong>Admits:</strong> <?php echo $numberAdmit; ?></p>
             </div>
         <div class="qr-code">
-            <img src="../../media/QR_code.png" alt="QR Code">
+            <img src="../../media/QR_code.png" alt="QR Code" width = "200" height="200">
         </div>
     </div>
         <br>
