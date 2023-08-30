@@ -73,6 +73,11 @@ $movieTitle = $moviesObject[$movieCode]['title'];
             justify-content: center;
             align-items: center;
          }
+         .receipt {
+            break-after: always;
+            justify-content: center;
+            align-items: center;
+         }
          .ticket {
             display: flex;
             align-items: flex-start;
@@ -81,6 +86,7 @@ $movieTitle = $moviesObject[$movieCode]['title'];
             border: 1px solid #ccc;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            break-inside: avoid;
         }
         .ticket-info {
             flex: 1;
@@ -99,18 +105,22 @@ $movieTitle = $moviesObject[$movieCode]['title'];
     </header>
 
     <main>
-        <p>Name:<?=$name?></p>
-        <p>Email:<?=$email?></p>
-        <p>Mobile:<?=$mobile?></p>
-        <br>
-        <p>First class adult seats: <?=$numberFCA?> Subtotal: $<?=$priceFCA?></p>
-        <p>First class concession seats: <?=$numberFCP?> Subtotal: $<?=$priceFCP?></p>
-        <p>First class child seats: <?=$numberFCC?> Subtotal: $<?=$priceFCC?></p>
-        <p>Standard adult seats: <?=$numberSTA?> Subtotal: $<?=$priceSTA?></p>
-        <p>Standard concession seats: <?=$numberSTP?> Subtotal: $<?=$priceSTP?></p>
-        <p>Standard child seats: <?=$numberSTC?> Subtotal: $<?=$priceSTC?></p>
-        <p>Total(including GST): $<?=$total?></p>
-        <p>GST: $<?=$gst?></p>
+        <div class="receipt">
+            <p>Name:<?=$name?></p>
+            <p>Email:<?=$email?></p>
+            <p>Mobile:<?=$mobile?></p>
+            <br>
+            <p>First class adult seats: <?=$numberFCA?> Subtotal: $<?=$priceFCA?></p>
+            <p>First class concession seats: <?=$numberFCP?> Subtotal: $<?=$priceFCP?></p>
+            <p>First class child seats: <?=$numberFCC?> Subtotal: $<?=$priceFCC?></p>
+            <p>Standard adult seats: <?=$numberSTA?> Subtotal: $<?=$priceSTA?></p>
+            <p>Standard concession seats: <?=$numberSTP?> Subtotal: $<?=$priceSTP?></p>
+            <p>Standard child seats: <?=$numberSTC?> Subtotal: $<?=$priceSTC?></p>
+            <p>Total(including GST): $<?=$total?></p>
+            <p>GST: $<?=$gst?></p>
+        </div>
+
+
         <br>
 
         <div class="ticket">
