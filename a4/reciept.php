@@ -36,7 +36,8 @@ $priceSTP = number_format($data[16], 2);
 $numberSTC = $data[17];
 $priceSTC = number_format($data[18], 2);
 $total = number_format($data[19], 2);
-$gst = number_format($data[20], 2);
+//$gst = number_format($data[20], 2);
+$gst = is_numeric($data[20]) ? number_format($data[20], 2) : 'N/A';
 $numberAdmit = $numberFCA + $numberFCC + $numberFCP + $numberSTA + $numberSTC + $numberSTP;
 
 $movieTitle = $moviesObject[$movieCode]['title'];
