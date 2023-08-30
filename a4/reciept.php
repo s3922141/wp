@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+//include tools.php for access to movie details
+include 'tools.php'; 
+
 if (isset($_POST['booking_data'])) {
     $line = $_POST['booking_data'];
     $data = explode(",", $line);
@@ -34,6 +37,8 @@ $numberSTC = $data[17];
 $priceSTC = $data[18];
 $total = $data[19];
 $gst = $data[20];
+
+$movieTitle = $moviesObject[$movieCode]['title'];
 ?>
 
 
@@ -49,5 +54,6 @@ $gst = $data[20];
     <p>Email:<?=$email?></p>
     <p>Mobile:<?=$mobile?></p>
     <p>Total:<?=$total?></p>
+    <p>Title:<?=$movieTitle?></p>
 </body>
 </html>
