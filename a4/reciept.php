@@ -24,19 +24,19 @@ $movieCode = $data[4];
 $dayOfMovie = $data[5];
 $timeOfMovie = $data[6];
 $numberFCA = $data[7];
-$priceFCA = $data[8];
+$priceFCA = number_format($data[8], 2);
 $numberFCP = $data[9];
-$priceFCP = $data[10];
+$priceFCP = number_format($data[10], 2);
 $numberFCC = $data[11];
-$priceFCC = $data[12];
+$priceFCC = number_format($data[12], 2);;
 $numberSTA = $data[13];
-$priceSTA = $data[14];
+$priceSTA = number_format($data[14], 2);
 $numberSTP = $data[15];
-$priceSTP = $data[16];
+$priceSTP = number_format($data[16], 2);
 $numberSTC = $data[17];
-$priceSTC = $data[18];
-$total = $data[19];
-$gst = $data[20];
+$priceSTC = number_format($data[18], 2);
+$total = number_format($data[19], 2);
+$gst = number_format($data[20], 2);
 
 $movieTitle = $moviesObject[$movieCode]['title'];
 ?>
@@ -47,13 +47,54 @@ $movieTitle = $moviesObject[$movieCode]['title'];
 <html lang='en'>
 <head>
     <title>Receipt</title>
+    <style>
+        header {
+            background-color: lightgrey;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         footer {
+            background-color: lightgrey;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+         body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+         }
+    </style>
 </head>
+
 <body>
-    <h1>Receipt</h1>
-    <p>Name:<?=$name?></p>
-    <p>Email:<?=$email?></p>
-    <p>Mobile:<?=$mobile?></p>
-    <p>Total:<?=$total?></p>
-    <p>Title:<?=$movieTitle?></p>
+    <header>
+        <h1>Receipt</h1>
+    </header>
+
+    <main>
+        <p>Name:<?=$name?></p>
+        <p>Email:<?=$email?></p>
+        <p>Mobile:<?=$mobile?></p>
+        <br>
+        <p>First class adult seats: <?=$numberFCA?> Subtotal: $<?=$priceFCA?></p>
+        <p>First class concession seats: <?=$numberFCP?> Subtotal: $<?=$priceFCP?></p>
+        <p>First class child seats: <?=$numberFCC?> Subtotal: $<?=$priceFCC?></p>
+        <p>Standard adult seats: <?=$numberSTA?> Subtotal: $<?=$priceSTA?></p>
+        <p>Standard concession seats: <?=$numberSTP?> Subtotal: $<?=$priceSTP?></p>
+        <p>Standard child seats: <?=$numberSTC?> Subtotal: $<?=$priceSTC?></p>
+        <p>Total(including GST): $<?=$total?></p>
+        <p>GST: $<?=$gst?></p>
+        <br>
+    </main>
+
+    <footer>
+        <p>Lunardo | 23 Main street, Springfield | Lunardo@emailplace.com.au | 035967876</p>
+    </footer>
+
 </body>
 </html>
